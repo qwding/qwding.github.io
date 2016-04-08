@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on qwding的blog</title>
-    <link>http://qwding.github.io/post/</link>
-    <description>Recent content in Posts on qwding的blog</description>
+    <title>Hexo on qwding的blog</title>
+    <link>http://qwding.github.io/tags/hexo/</link>
+    <description>Recent content in Hexo on qwding的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 08 Apr 2016 18:51:19 +0800</lastBuildDate>
-    <atom:link href="http://qwding.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hugo vs hexo</title>
@@ -60,20 +60,6 @@
 &lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/omnibus/docker/&#34;&gt;gitlab-ee docker安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/ee/pages/README.html&#34;&gt;gitlab pages使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>一个开始</title>
-      <link>http://qwding.github.io/post/main/</link>
-      <pubDate>Fri, 08 Apr 2016 11:57:57 +0800</pubDate>
-      
-      <guid>http://qwding.github.io/post/main/</guid>
-      <description>
-
-&lt;h3 id=&#34;写点博客总是好的:379caad01b6ea305187be199bcac1370&#34;&gt;写点博客总是好的&lt;/h3&gt;
-
-&lt;p&gt;长点心，写点博客，少打游戏。&lt;/p&gt;
 </description>
     </item>
     

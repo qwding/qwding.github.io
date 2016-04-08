@@ -97,7 +97,9 @@
 	<header>
 		<h1>一个开始</h1>
 	</header>
-
+	<div style="text-align:right">
+	<a href="https://github.com/qwding/myblog/tree/master/content/post/main/" class="fixlink" style="text-align:right">fix</a>
+	</div>
 	<article>
 		
 
@@ -159,5 +161,13 @@
   
   <script src="http://qwding.github.io//js/App.js"></script>
   
+  <script type="text/javascript">
+  $(function(){
+     var url =  $('.fixlink').attr('href');
+     url = url.replace(/\/$/,'.md');
+     $('.fixlink').attr('href',url);
+  });
+
+   </script>
 </body>
 </html>

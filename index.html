@@ -181,5 +181,13 @@
   
   <script src="http://qwding.github.io//js/App.js"></script>
   
+  <script type="text/javascript">
+  $(function(){
+     var url =  $('.fixlink').attr('href');
+     url = url.replace(/\/$/,'.md');
+     $('.fixlink').attr('href',url);
+  });
+
+   </script>
 </body>
 </html>

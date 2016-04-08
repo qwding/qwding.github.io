@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>qwding的blog</title>
-    <link>https://base-url-here/</link>
+    <link>http://qwding.github.io/</link>
     <description>Recent content on qwding的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 08 Apr 2016 12:06:31 +0800</lastBuildDate>
-    <atom:link href="https://base-url-here/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>矫情</title>
-      <link>https://base-url-here/persional/main/</link>
+      <link>http://qwding.github.io/persional/main/</link>
       <pubDate>Fri, 08 Apr 2016 12:06:31 +0800</pubDate>
       
-      <guid>https://base-url-here/persional/main/</guid>
+      <guid>http://qwding.github.io/persional/main/</guid>
       <description>
 
 &lt;h3 id=&#34;贱人就是矫情:379caad01b6ea305187be199bcac1370&#34;&gt;贱人就是矫情&lt;/h3&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>一个开始</title>
-      <link>https://base-url-here/post/main/</link>
+      <link>http://qwding.github.io/post/main/</link>
       <pubDate>Fri, 08 Apr 2016 11:57:57 +0800</pubDate>
       
-      <guid>https://base-url-here/post/main/</guid>
+      <guid>http://qwding.github.io/post/main/</guid>
       <description>
 
 &lt;h3 id=&#34;写点博客总是好的:379caad01b6ea305187be199bcac1370&#34;&gt;写点博客总是好的&lt;/h3&gt;

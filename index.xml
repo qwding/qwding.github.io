@@ -6,8 +6,78 @@
     <description>Recent content on qwding的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Apr 2016 18:51:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2016 18:18:07 +0800</lastBuildDate>
     <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>about</title>
+      <link>http://qwding.github.io/about/</link>
+      <pubDate>Thu, 14 Apr 2016 18:18:07 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/about/</guid>
+      <description>
+
+&lt;h3 id=&#34;过山车式的履历:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;过山车式的履历&lt;/h3&gt;
+
+&lt;p&gt;一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。&lt;/p&gt;
+
+&lt;p&gt;转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。&lt;/p&gt;
+
+&lt;p&gt;但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。&lt;/p&gt;
+
+&lt;p&gt;与其来说是来做后台开发，不如说是来做ops的&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。&lt;/p&gt;
+
+&lt;h3 id=&#34;懒癌晚期:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;懒癌晚期&lt;/h3&gt;
+
+&lt;p&gt;都说程序员呆板，技术宅，爱加班。我发现我一样不占。&lt;/p&gt;
+
+&lt;p&gt;我不仅不爱加班，更不是技术宅。&lt;/p&gt;
+
+&lt;p&gt;一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;主要还是玩性太大吧。&lt;/p&gt;
+
+&lt;h3 id=&#34;id:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;ID&lt;/h3&gt;
+
+&lt;p&gt;我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业&lt;/p&gt;
+
+&lt;p&gt;很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>温暖的木屋</title>
+      <link>http://qwding.github.io/relax/warm_house/</link>
+      <pubDate>Thu, 14 Apr 2016 18:18:02 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/relax/warm_house/</guid>
+      <description>&lt;p&gt;在v2ex上发现了一个小游戏，据说专门写代码时候在后台挂着的，于是也玩了一下。根本停不下来。&lt;/p&gt;
+
+&lt;p&gt;链接：&lt;a href=&#34;http://g.miaowu.asia/index.php&#34;&gt;http://g.miaowu.asia/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;直接在线自动存档了。&lt;/p&gt;
+
+&lt;p&gt;讲的大概就是从一个小黑屋发展成大村庄的故事，最后走向了外太空~~~&lt;/p&gt;
+
+&lt;p&gt;整个游戏概述：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;就是一直挂机，收集资源，有了资源可以发展，发展到一定程度，出现新资源，可以提升自己的战斗力。&lt;/li&gt;
+&lt;li&gt;之后买得起罗盘就可以开始探索，探索时候要注意携带的水量和腊肉量，一旦任意耗光，就死掉了，回家继续发展。&lt;/li&gt;
+&lt;li&gt;探索途中会遇到野怪，控制好血量不要死掉就行，装备的话武器一样带一个就行。剩下都是腊肉都无所谓了。探索洞穴需要火把，带3个足够了。&lt;/li&gt;
+&lt;li&gt;一定控制好资源够回家的水和肉。&lt;/li&gt;
+&lt;li&gt;探索到一定程度就可以上天了。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;虽说是挂机游戏，但是探索时候真心还是不挂机&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;而且这是好几年前的游戏了，有开源代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;祝玩的愉快~&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>hugo vs hexo</title>

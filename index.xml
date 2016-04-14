@@ -6,46 +6,8 @@
     <description>Recent content on qwding的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Apr 2016 18:18:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2016 18:18:02 +0800</lastBuildDate>
     <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>about</title>
-      <link>http://qwding.github.io/about/</link>
-      <pubDate>Thu, 14 Apr 2016 18:18:07 +0800</pubDate>
-      
-      <guid>http://qwding.github.io/about/</guid>
-      <description>
-
-&lt;h3 id=&#34;过山车式的履历:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;过山车式的履历&lt;/h3&gt;
-
-&lt;p&gt;一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。&lt;/p&gt;
-
-&lt;p&gt;转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。&lt;/p&gt;
-
-&lt;p&gt;但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。&lt;/p&gt;
-
-&lt;p&gt;与其来说是来做后台开发，不如说是来做ops的&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。&lt;/p&gt;
-
-&lt;h3 id=&#34;懒癌晚期:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;懒癌晚期&lt;/h3&gt;
-
-&lt;p&gt;都说程序员呆板，技术宅，爱加班。我发现我一样不占。&lt;/p&gt;
-
-&lt;p&gt;我不仅不爱加班，更不是技术宅。&lt;/p&gt;
-
-&lt;p&gt;一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;主要还是玩性太大吧。&lt;/p&gt;
-
-&lt;h3 id=&#34;id:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;ID&lt;/h3&gt;
-
-&lt;p&gt;我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业&lt;/p&gt;
-
-&lt;p&gt;很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>温暖的木屋</title>
@@ -158,6 +120,44 @@
 &lt;h3 id=&#34;写点博客总是好的:379caad01b6ea305187be199bcac1370&#34;&gt;写点博客总是好的&lt;/h3&gt;
 
 &lt;p&gt;长点心，写点博客，少打游戏。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://qwding.github.io/about/</link>
+      <pubDate>Fri, 01 Apr 2016 18:18:07 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/about/</guid>
+      <description>
+
+&lt;h3 id=&#34;过山车式的履历:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;过山车式的履历&lt;/h3&gt;
+
+&lt;p&gt;一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。&lt;/p&gt;
+
+&lt;p&gt;转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。&lt;/p&gt;
+
+&lt;p&gt;但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。&lt;/p&gt;
+
+&lt;p&gt;与其来说是来做后台开发，不如说是来做ops的&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。&lt;/p&gt;
+
+&lt;h3 id=&#34;懒癌晚期:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;懒癌晚期&lt;/h3&gt;
+
+&lt;p&gt;都说程序员呆板，技术宅，爱加班。我发现我一样不占。&lt;/p&gt;
+
+&lt;p&gt;我不仅不爱加班，更不是技术宅。&lt;/p&gt;
+
+&lt;p&gt;一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;主要还是玩性太大吧。&lt;/p&gt;
+
+&lt;h3 id=&#34;id:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;ID&lt;/h3&gt;
+
+&lt;p&gt;我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业&lt;/p&gt;
+
+&lt;p&gt;很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~&lt;/p&gt;
 </description>
     </item>
     

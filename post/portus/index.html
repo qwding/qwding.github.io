@@ -229,14 +229,15 @@ ADD . .
 
 <li><p>2.0.3版本可以登录，但是还是401. 应该是rails的不同版本的bundle不一样吧，没找解决办法。还是直接改回了master版本。</p></li>
 
-<li><p>push镜像的时候报错：
-```
-Error parsing HTTP response: invalid character &lsquo;&lt;&rsquo; looking for beginning of value: &ldquo;<html>\r\n<head><title>413 Request Entity Too Large</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>413 Request Entity Too Large</h1></center>\r\n<hr><center>nginx/1.9.14</center>\r\n</body>\r\n</html>\r\n&rdquo;</p></li>
+<li><p>push镜像的时候报错：</p>
+
+<pre><code>Error parsing HTTP response: invalid character '&lt;' looking for beginning of value: &quot;&lt;html&gt;\r\n&lt;head&gt;&lt;title&gt;413 Request Entity Too Large&lt;/title&gt;&lt;/head&gt;\r\n&lt;body bgcolor=\&quot;white\&quot;&gt;\r\n&lt;center&gt;&lt;h1&gt;413 Request Entity Too Large&lt;/h1&gt;&lt;/center&gt;\r\n&lt;hr&gt;&lt;center&gt;nginx/1.9.14&lt;/center&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n&quot;
+</code></pre></li>
 </ol>
 
-<p>```
-这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。
-issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issuecomment-39845868">https://github.com/docker/docker-registry/issues/298#issuecomment-39845868</a></p>
+<p>这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。</p>
+
+<p>issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issuecomment-39845868">https://github.com/docker/docker-registry/issues/298#issuecomment-39845868</a></p>
 
 	</article>
 </main>

@@ -139,14 +139,15 @@ ADD . .
 
 &lt;li&gt;&lt;p&gt;2.0.3版本可以登录，但是还是401. 应该是rails的不同版本的bundle不一样吧，没找解决办法。还是直接改回了master版本。&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;push镜像的时候报错：
-```
-Error parsing HTTP response: invalid character &amp;lsquo;&amp;lt;&amp;rsquo; looking for beginning of value: &amp;ldquo;&lt;html&gt;\r\n&lt;head&gt;&lt;title&gt;413 Request Entity Too Large&lt;/title&gt;&lt;/head&gt;\r\n&lt;body bgcolor=\&#34;white\&#34;&gt;\r\n&lt;center&gt;&lt;h1&gt;413 Request Entity Too Large&lt;/h1&gt;&lt;/center&gt;\r\n&lt;hr&gt;&lt;center&gt;nginx/1.9.14&lt;/center&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;push镜像的时候报错：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error parsing HTTP response: invalid character &#39;&amp;lt;&#39; looking for beginning of value: &amp;quot;&amp;lt;html&amp;gt;\r\n&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;413 Request Entity Too Large&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;\r\n&amp;lt;body bgcolor=\&amp;quot;white\&amp;quot;&amp;gt;\r\n&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;413 Request Entity Too Large&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;\r\n&amp;lt;hr&amp;gt;&amp;lt;center&amp;gt;nginx/1.9.14&amp;lt;/center&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;```
-这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。
-issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&#34;&gt;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。&lt;/p&gt;
+
+&lt;p&gt;issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&#34;&gt;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

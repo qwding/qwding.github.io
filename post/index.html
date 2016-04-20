@@ -102,6 +102,38 @@
         <div class="panel panel-default">
         	<div class="panel-header">
         		<h3>
+        			<a href="http://qwding.github.io/post/portus/">portus的docker容器搭建</a>
+        			<br>
+        			<small>
+        				First Published: 20 April 2016
+        			</small>
+        		</h3>
+        	</div>
+        	<div class="panel-body">
+        		一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install --retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service. RUN echo &quot;deb http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/ ./&quot; &gt;&gt; /etc/apt/sources.list RUN wget http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/Release.key &amp;&amp; \ apt-key add Release.key &amp;&amp; \ rm Release.key RUN apt-get update &amp;&amp; \ apt-get install -y --no-install-recommends phantomjs &amp;&amp; \ rm -rf /var/lib/apt/lists/* ADD .
+        		
+        			... <a href="http://qwding.github.io/post/portus/">Read More</a>
+        		
+        	</div>
+        	<div class="panel-footer">
+        		
+        		<small class="text-muted">
+        			
+        			
+        				<a href="http://qwding.github.io/tags/portus"><span class="label label-success">portus</span></a>
+        			
+        				<a href="http://qwding.github.io/tags/registry"><span class="label label-success">registry</span></a>
+        			
+        		</small>
+        		
+        	</div>
+        </div>
+	
+	
+	
+        <div class="panel panel-default">
+        	<div class="panel-header">
+        		<h3>
         			<a href="http://qwding.github.io/post/hugo_vs_hexo/">hugo vs hexo</a>
         			<br>
         			<small>

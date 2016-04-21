@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>qwding的blog</title>
-    <link>http://qwding.github.io/</link>
+    <link>http://blog.qwding.com/</link>
     <description>Recent content on qwding的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Apr 2016 11:48:19 +0800</lastBuildDate>
-    <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.qwding.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>portus的docker容器搭建</title>
-      <link>http://qwding.github.io/post/portus/</link>
+      <link>http://blog.qwding.com/post/portus/</link>
       <pubDate>Wed, 20 Apr 2016 11:48:19 +0800</pubDate>
       
-      <guid>http://qwding.github.io/post/portus/</guid>
+      <guid>http://blog.qwding.com/post/portus/</guid>
       <description>
 
 &lt;h3 id=&#34;一般形式:95f2626a8b71aea78c26d5a625e37de7&#34;&gt;一般形式&lt;/h3&gt;
@@ -153,10 +153,10 @@ ADD . .
     
     <item>
       <title>温暖的木屋</title>
-      <link>http://qwding.github.io/relax/warm_house/</link>
+      <link>http://blog.qwding.com/relax/warm_house/</link>
       <pubDate>Thu, 14 Apr 2016 18:18:02 +0800</pubDate>
       
-      <guid>http://qwding.github.io/relax/warm_house/</guid>
+      <guid>http://blog.qwding.com/relax/warm_house/</guid>
       <description>&lt;p&gt;在v2ex上发现了一个小游戏，据说专门写代码时候在后台挂着的，于是也玩了一下。根本停不下来。&lt;/p&gt;
 
 &lt;p&gt;链接：&lt;a href=&#34;http://g.miaowu.asia/index.php&#34;&gt;http://g.miaowu.asia/index.php&lt;/a&gt;&lt;/p&gt;
@@ -185,10 +185,10 @@ ADD . .
     
     <item>
       <title>hugo vs hexo</title>
-      <link>http://qwding.github.io/post/hugo_vs_hexo/</link>
+      <link>http://blog.qwding.com/post/hugo_vs_hexo/</link>
       <pubDate>Fri, 08 Apr 2016 18:51:19 +0800</pubDate>
       
-      <guid>http://qwding.github.io/post/hugo_vs_hexo/</guid>
+      <guid>http://blog.qwding.com/post/hugo_vs_hexo/</guid>
       <description>
 
 &lt;h3 id=&#34;hugo-和-hexo-对比:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;hugo 和 hexo 对比&lt;/h3&gt;
@@ -239,10 +239,10 @@ ADD . .
     
     <item>
       <title>矫情</title>
-      <link>http://qwding.github.io/persional/main/</link>
+      <link>http://blog.qwding.com/persional/main/</link>
       <pubDate>Fri, 08 Apr 2016 12:06:31 +0800</pubDate>
       
-      <guid>http://qwding.github.io/persional/main/</guid>
+      <guid>http://blog.qwding.com/persional/main/</guid>
       <description>
 
 &lt;h3 id=&#34;贱人就是矫情:379caad01b6ea305187be199bcac1370&#34;&gt;贱人就是矫情&lt;/h3&gt;
@@ -253,10 +253,10 @@ ADD . .
     
     <item>
       <title>一个开始</title>
-      <link>http://qwding.github.io/post/main/</link>
+      <link>http://blog.qwding.com/post/main/</link>
       <pubDate>Fri, 08 Apr 2016 11:57:57 +0800</pubDate>
       
-      <guid>http://qwding.github.io/post/main/</guid>
+      <guid>http://blog.qwding.com/post/main/</guid>
       <description>
 
 &lt;h3 id=&#34;写点博客总是好的:379caad01b6ea305187be199bcac1370&#34;&gt;写点博客总是好的&lt;/h3&gt;
@@ -267,10 +267,10 @@ ADD . .
     
     <item>
       <title>about</title>
-      <link>http://qwding.github.io/about/</link>
+      <link>http://blog.qwding.com/about/</link>
       <pubDate>Fri, 01 Apr 2016 18:18:07 +0800</pubDate>
       
-      <guid>http://qwding.github.io/about/</guid>
+      <guid>http://blog.qwding.com/about/</guid>
       <description>
 
 &lt;h3 id=&#34;过山车式的履历:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;过山车式的履历&lt;/h3&gt;

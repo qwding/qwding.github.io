@@ -137,17 +137,22 @@ ADD . .
 
 &lt;p&gt;修复方法： 直接到数据库的registry表将地址改成域名就行。&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;2.0.3版本可以登录，但是还是401. 应该是rails的不同版本的bundle不一样吧，没找解决办法。还是直接改回了master版本。&lt;/p&gt;&lt;/li&gt;
-
 &lt;li&gt;&lt;p&gt;push镜像的时候报错：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Error parsing HTTP response: invalid character &#39;&amp;lt;&#39; looking for beginning of value: &amp;quot;&amp;lt;html&amp;gt;\r\n&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;413 Request Entity Too Large&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;\r\n&amp;lt;body bgcolor=\&amp;quot;white\&amp;quot;&amp;gt;\r\n&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;413 Request Entity Too Large&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;\r\n&amp;lt;hr&amp;gt;&amp;lt;center&amp;gt;nginx/1.9.14&amp;lt;/center&amp;gt;\r\n&amp;lt;/body&amp;gt;\r\n&amp;lt;/html&amp;gt;\r\n&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。
+issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&#34;&gt;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;portus读配置的顺序 配置文件 &amp;gt; -e 参数.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;registry可以不配置auth并使用portus的，登录portus时候添加registry skip error就可以，但是使用的时候会报很多错误，语言bug，改改代码就ok。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;registry 的issuer 对应的就是portus/config/FQDN的value，文档没有说明白，坑的一逼。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;没有api，如果不想直接操作web来创建用户等，就需要自己写方法去操作数据库了。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;这个问题是因为我们使用了http，并配置了nginx，但是默认只有https才允许有basic auth，所以认证失败了。换成https就行。&lt;/p&gt;
-
-&lt;p&gt;issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&#34;&gt;https://github.com/docker/docker-registry/issues/298#issuecomment-39845868&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -2,6 +2,8 @@
 
 
     
+        
+    
 
 
 
@@ -11,7 +13,7 @@
 <html>
     <head>
         
-            <title>Posts - QWDing blog</title>
+            <title>Portus Posts - QWDing blog</title>
         
 
         <meta charset="utf-8" />
@@ -28,13 +30,13 @@
         
 
         
-        <meta property="og:title" content="Posts" />
+        <meta property="og:title" content="Portus" />
 <meta property="og:description" content="懒癌晚期" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.qwding.com/post/" />
+<meta property="og:url" content="http://blog.qwding.com/categories/portus/" />
 
 
-<meta property="og:updated_time" content="2016-06-07T19:19:58&#43;08:00"/>
+<meta property="og:updated_time" content="2016-04-20T11:48:19&#43;08:00"/>
 
 
 
@@ -45,7 +47,7 @@
 
 
         
-<meta itemprop="name" content="Posts">
+<meta itemprop="name" content="Portus">
 <meta itemprop="description" content="懒癌晚期">
 
 
@@ -83,7 +85,7 @@
     
 <header id="header">
     
-        <h1><a href="/">QWDing blog</i></a></h1>
+        <h2><a href="/">QWDing blog</i></a></h2>
     
 
     <nav class="links">
@@ -244,157 +246,10 @@
 
     
     <div id="main">
-        
-          
-          <h2>2016</h2>
-          
-             <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://blog.qwding.com/post/shell_exec_db/">shell execute mongo/mysql which start by docker.</a></h2>
+        <h1>Portus</h1>
         
         
-            <p>在实例方法内修改实例地址</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-06-07'>
-            June 7, 2016</time>
-        <span class="author"></span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>#问题初衷 打算一键部署带权限验证的mongo。但是docker hub官方镜像创建mongo步骤为： docker run &ndash;name mongodb -d -p 27017:27017 mongo:3.3 &ndash;auth docker exec -it mongodb mongo admin db.createUser({ user: &lsquo;root&rsquo;, pwd: &lsquo;root&rsquo;, roles: [ { role: &quot;root&quot;, db: &quot;admin&quot; } ] }); 打算将其做成脚本 #用shell实现 经过查阅，发现shell的 &lt;&lt;EOF 可以实现，查阅资料 <a href="http://my.oschina.net/u/1032146/blog/146941">http://my.oschina.net/u/1032146/blog/146941</a> 应该可以实现,于是写了脚本 #!/bin/bash mongo admin &lt;&lt; EOF db.createUser({ user: &lsquo;root&rsquo;, pwd: &lsquo;root&rsquo;, roles: [ { role: &quot;root&quot;, db: &quot;admin&quot; } ] }); exit; EOF 在mongo 启动的容器内执行脚本，成功！ #直接写脚本启动容器(error) !/bin/bash docker run &ndash;name mongodb</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/shell_exec_db/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-tags">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/shell'>shell</a></li>
-    
-        <li><a href='/categories/docker'>docker</a></li>
-    
-        <li><a href='/categories/mysql'>mysql</a></li>
-    
-        <li><a href='/categories/mongo'>mongo</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-            
-             <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/">golang: change instance address in his method</a></h2>
-        
-        
-            <p>在实例方法内修改实例地址</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-06-01'>
-            June 1, 2016</time>
-        <span class="author"></span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>前提回顾 对于结构体中的指针应用，大部分可能知道的是如下两代码的区别 func (a *AA) funcA() func (a AA) funcB() 区别在于，我们在funcA内修改a的值，是可以成功的，但是在funcB修改a的值是失败的。 因为funcA中的a是指针传递，funcB中的a是值传递。这个大家都知道。 今天话题 先上代码 package main import ( &quot;fmt&quot; ) type AA struct { xyz string opq string } func (this *AA) Change() { b := &amp;AA{xyz: &quot;xyz1&quot;, opq: &quot;opq1&quot;} this = b fmt.Println(&quot;in this:&quot;, this, &quot;addr:&quot;, &amp;this) } func main() { a := &amp;AA{xyz: &quot;xyz0&quot;, opq: &quot;opq0&quot;} fmt.Println(&quot;before a:&quot;, a, &quot;addr:&quot;, &amp;a) a.Change() fmt.Println(&quot;after a:&quot;, a, &quot;addr:&quot;, &amp;a) }</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-tags">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/golang'>golang</a></li>
-    
-        <li><a href='/categories/pointer'>pointer</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-            
-             <article class="post">
+            <article class="post">
     <header>
     <div class="title">
         
@@ -464,148 +319,7 @@
     </footer>
 </article>
 
-            
-             <article class="post">
-    <header>
-    <div class="title">
         
-            <h2><a href="http://blog.qwding.com/post/hugo_vs_hexo/">hugo vs hexo</a></h2>
-        
-        
-            <p>contrast hugo with hexo</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-04-08'>
-            April 8, 2016</time>
-        <span class="author"></span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>hugo 和 hexo 对比 主要是查阅了一下很多人经验，并汇总了一下对比结果 hexo hugo 速度 快 特别快 主题 几大主题基础上延伸,总量更多 很多,良好主题生态圈 安装及更新 更新容易有坑，因为依赖包 一个binary,安装更新快 评论系统 支持disqus等 支持disqus等 应用方面 博客适应性更强 非博客适应性更强 文档 有中文文档 文档超详细，中文不全 功能 分类,tag,多语言,i18n 分类,tag,series,wight,多语言 因为本身更喜欢golang，所以选择了hugo 分享一下查阅的资料 十种静态页面生成工具 hexo 文档 hexo 中文文档 hexo 一篇比较好的使用文章 hugo 文档 hugo 中文文档 hugo 主题 gitlab pages gitlab 8.3以后也出了github pages的功能，但只限gitlab-ee版本，需要付费 gitlab-ee docker安装 gitlab pages使用</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/hugo_vs_hexo/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-tags">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/hugo'>hugo</a></li>
-    
-        <li><a href='/categories/hexo'>hexo</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-            
-             <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://blog.qwding.com/post/main/">一个开始</a></h2>
-        
-        
-            <p>One start.</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-04-08'>
-            April 8, 2016</time>
-        <span class="author"></span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>写点博客总是好的 长点心，写点博客，少打游戏。</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/main/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-tags">&nbsp;</i>
-                    
-
-                    
-                        Category
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/live'>live</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-            
-          
 
         
 <ul class="actions pagination">
@@ -614,8 +328,7 @@
     
 
     
-        <li><a href="/post/page/2/"
-                class="button big next">Next Page</a></li>
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
     
 </ul>
 
@@ -639,7 +352,7 @@
             
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/post/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/portus/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -788,60 +501,6 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/golang/">golang</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hugo/">hugo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/game/">game</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hexo/">hexo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/docker/">docker</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -884,6 +543,60 @@
                         </article>
                     </li>
                 
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/game/">game</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/golang/">golang</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hugo/">hugo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
             </ul>
         </section>
     
@@ -904,7 +617,7 @@
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/post/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/portus/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://blog.qwding.com/post/" />
 
 
-<meta property="og:updated_time" content="2016-04-08T11:57:57&#43;08:00"/>
+<meta property="og:updated_time" content="2016-04-08T18:51:19&#43;08:00"/>
 
 
 
@@ -398,6 +398,77 @@
     <header>
     <div class="title">
         
+            <h2><a href="http://blog.qwding.com/post/portus/">Install portus by docker and configration read.</a></h2>
+        
+        
+            <p>portus的docker容器搭建</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-04-20'>
+            April 20, 2016</time>
+        <span class="author"></span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install &ndash;retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service. RUN echo &quot;deb <a href="http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/">http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/</a> ./&quot; &gt;&gt; /etc/apt/sources.list RUN wget <a href="http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/Release.key">http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/Release.key</a> &amp;&amp; \ apt-key add Release.key &amp;&amp; \ rm Release.key RUN apt-get update &amp;&amp; \ apt-get install -y &ndash;no-install-recommends phantomjs &amp;&amp; \ rm -rf /var/lib/apt/lists/* ADD .</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/portus/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/portus'>portus</a></li>
+    
+        <li><a href='/categories/registry'>registry</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
             <h2><a href="http://blog.qwding.com/post/hugo_vs_hexo/">hugo vs hexo</a></h2>
         
         
@@ -527,52 +598,6 @@
     
     
         <li><a href='/categories/live'>live</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-            
-          
-          <h2>0001</h2>
-          
-             <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://blog.qwding.com/post/portus/"></a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='0001-01-01'>
-            January 1, 0001</time>
-        <span class="author"></span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>date = &ldquo;2016-04-20T11:48:19+08:00&rdquo; description = &ldquo;contrast hugo with hexo&rdquo; highlight = true categories = [&ldquo;portus&rdquo;,&ldquo;registry&rdquo;] title = &ldquo;portus的docker容器搭建&rdquo; index = true +++ 一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install &ndash;retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/portus/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
     
 </ul>
 
@@ -763,7 +788,16 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
+                                <a href="/categories/game/">game</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -799,24 +833,6 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/golang/">golang</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/game/">game</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/pointer/">pointer</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -826,7 +842,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hugo/">hugo</a>
+                                <a href="/categories/registry/">registry</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -835,7 +851,34 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hexo/">hexo</a>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/golang/">golang</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hugo/">hugo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

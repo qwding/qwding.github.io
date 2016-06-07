@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>QWDing blog</title>
+                <title>Install portus by docker and configration read.</title>
             
         
 
@@ -16,9 +16,7 @@
 
         
         
-            
-                <meta name="description" content="懒癌晚期">
-            
+            <meta name="description" content="portus的docker容器搭建">
         
 
         
@@ -27,18 +25,18 @@
 
 
 
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="date = &ldquo;2016-04-20T11:48:19&#43;08:00&rdquo; description = &ldquo;contrast hugo with hexo&rdquo; highlight = true categories = [&ldquo;portus&rdquo;,&ldquo;registry&rdquo;] title = &ldquo;portus的docker容器搭建&rdquo; index = true &#43;&#43;&#43; 一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install --retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service."/>
+<meta name="twitter:title" content="Install portus by docker and configration read."/>
+<meta name="twitter:description" content="portus的docker容器搭建"/>
 
 
 
-        <meta property="og:title" content="" />
-<meta property="og:description" content="date = &ldquo;2016-04-20T11:48:19&#43;08:00&rdquo; description = &ldquo;contrast hugo with hexo&rdquo; highlight = true categories = [&ldquo;portus&rdquo;,&ldquo;registry&rdquo;] title = &ldquo;portus的docker容器搭建&rdquo; index = true &#43;&#43;&#43; 一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install --retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service." />
+        <meta property="og:title" content="Install portus by docker and configration read." />
+<meta property="og:description" content="portus的docker容器搭建" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.qwding.com/post/portus/" />
 
 
-
+<meta property="og:updated_time" content="2016-04-20T11:48:19&#43;08:00"/>
 
 
 
@@ -50,16 +48,16 @@
 
 
         
-<meta itemprop="name" content="">
-<meta itemprop="description" content="date = &ldquo;2016-04-20T11:48:19&#43;08:00&rdquo; description = &ldquo;contrast hugo with hexo&rdquo; highlight = true categories = [&ldquo;portus&rdquo;,&ldquo;registry&rdquo;] title = &ldquo;portus的docker容器搭建&rdquo; index = true &#43;&#43;&#43; 一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install --retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service.">
+<meta itemprop="name" content="Install portus by docker and configration read.">
+<meta itemprop="description" content="portus的docker容器搭建">
+
+
+<meta itemprop="dateModified" content="2016-04-20T11:48:19&#43;08:00" />
+<meta itemprop="wordCount" content="281">
 
 
 
-<meta itemprop="wordCount" content="303">
-
-
-
-<meta itemprop="keywords" content="docker,game,golang,hexo,hugo,live,mongo,mysql,pointer,shell," />
+<meta itemprop="keywords" content="docker,game,golang,hexo,hugo,live,mongo,mysql,pointer,portus,registry,shell," />
 
         
 
@@ -268,7 +266,7 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&text=&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&text=Install%20portus%20by%20docker%20and%20configration%20read.&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
@@ -286,19 +284,19 @@
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
@@ -321,9 +319,11 @@
     <header>
     <div class="title">
         
-            <h1><a href="http://blog.qwding.com/post/portus/"></a></h1>
+            <h1><a href="http://blog.qwding.com/post/portus/">Install portus by docker and configration read.</a></h1>
             
         
+        
+            <p>portus的docker容器搭建</p>
         
     </div>
     <div class="meta">
@@ -332,8 +332,8 @@
         
 
         <time class="published"
-            datetime='0001-01-01'>
-            January 1, 0001</time>
+            datetime='2016-04-20'>
+            April 20, 2016</time>
         <span class="author"></span>
         
             <p>2 minute read</p>
@@ -348,7 +348,7 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&text=&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&text=Install%20portus%20by%20docker%20and%20configration%20read.&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
@@ -366,19 +366,19 @@
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fportus%2f&title=Install%20portus%20by%20docker%20and%20configration%20read." target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
@@ -395,14 +395,6 @@
 
     <div id="content">
         
-
-<p>date = &ldquo;2016-04-20T11:48:19+08:00&rdquo;
-description = &ldquo;contrast hugo with hexo&rdquo;
-highlight = true
-categories = [&ldquo;portus&rdquo;,&ldquo;registry&rdquo;]
-title = &ldquo;portus的docker容器搭建&rdquo;
-index = true
-+++</p>
 
 <h3 id="一般形式:95f2626a8b71aea78c26d5a625e37de7">一般形式</h3>
 
@@ -546,8 +538,34 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
     <footer>
         <ul class="stats">
     
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
 
     
+    
+        <li><a href='/categories/portus'>portus</a></li>
+    
+        <li><a href='/categories/registry'>registry</a></li>
     
 </ul>
 
@@ -555,10 +573,13 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
 </article>
 <ul class="actions pagination">
     
+        <li><a href="http://blog.qwding.com/post/hugo_vs_hexo/"
+                class="button big previous">hugo vs hexo</a></li>
+    
 
     
-        <li><a href="http://blog.qwding.com/post/main/"
-                class="button big next">一个开始</a></li>
+        <li><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/"
+                class="button big next">golang: change instance address in his method</a></li>
     
 </ul>
 
@@ -570,7 +591,7 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
 <script type="text/javascript">
     var disqus_shortname = 'puppy';
     var disqus_identifier = 'http:\/\/blog.qwding.com\/post\/portus\/';
-    var disqus_title = '';
+    var disqus_title = 'Install portus by docker and configration read.';
     var disqus_url = 'http:\/\/blog.qwding.com\/post\/portus\/';
 
     (function() {
@@ -751,7 +772,7 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/pointer/">pointer</a>
+                                <a href="/categories/portus/">portus</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -769,7 +790,43 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hexo/">hexo</a>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/golang/">golang</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mongo/">mongo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pointer/">pointer</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/registry/">registry</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -787,7 +844,7 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
+                                <a href="/categories/hexo/">hexo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -806,24 +863,6 @@ issue地址：<a href="https://github.com/docker/docker-registry/issues/298#issu
                         <article>
                             <header>
                                 <a href="/categories/mysql/">mysql</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mongo/">mongo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/golang/">golang</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

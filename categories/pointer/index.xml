@@ -10,7 +10,7 @@
     <atom:link href="http://blog.qwding.com/categories/pointer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>golang 在实例方法内修改实例地址测试</title>
+      <title>golang: change instance address in his method</title>
       <link>http://blog.qwding.com/post/golang_struct_func_changeaddr/</link>
       <pubDate>Wed, 01 Jun 2016 19:19:58 +0800</pubDate>
       

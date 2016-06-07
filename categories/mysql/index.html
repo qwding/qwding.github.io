@@ -13,7 +13,7 @@
 <html>
     <head>
         
-            <title>Live Posts - QWDing blog</title>
+            <title>Mysql Posts - QWDing blog</title>
         
 
         <meta charset="utf-8" />
@@ -30,13 +30,13 @@
         
 
         
-        <meta property="og:title" content="Live" />
+        <meta property="og:title" content="Mysql" />
 <meta property="og:description" content="懒癌晚期" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.qwding.com/categories/live/" />
+<meta property="og:url" content="http://blog.qwding.com/categories/mysql/" />
 
 
-<meta property="og:updated_time" content="2016-04-08T12:06:31&#43;08:00"/>
+<meta property="og:updated_time" content="2016-06-07T19:19:58&#43;08:00"/>
 
 
 
@@ -47,7 +47,7 @@
 
 
         
-<meta itemprop="name" content="Live">
+<meta itemprop="name" content="Mysql">
 <meta itemprop="description" content="懒癌晚期">
 
 
@@ -246,17 +246,17 @@
 
     
     <div id="main">
-        <h1>Live</h1>
+        <h1>Mysql</h1>
         
         
             <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="http://blog.qwding.com/persional/main/">矫情</a></h2>
+            <h2><a href="http://blog.qwding.com/post/shell_exec_db/">shell execute mongo/mysql which start by docker.</a></h2>
         
         
-            <p>unreasonable.</p>
+            <p>在实例方法内修改实例地址</p>
         
     </div>
     <div class="meta">
@@ -265,8 +265,8 @@
         
 
         <time class="published"
-            datetime='2016-04-08'>
-            April 8, 2016</time>
+            datetime='2016-06-07'>
+            June 7, 2016</time>
         <span class="author"></span>
         
             <p>1 minute read</p>
@@ -277,11 +277,11 @@
 
     
 
-    <p>贱人就是矫情 没事矫情一下，在这里写一些与技术无关的事情</p>
+    <p>#问题初衷 打算一键部署带权限验证的mongo。但是docker hub官方镜像创建mongo步骤为： docker run &ndash;name mongodb -d -p 27017:27017 mongo:3.3 &ndash;auth docker exec -it mongodb mongo admin db.createUser({ user: &lsquo;root&rsquo;, pwd: &lsquo;root&rsquo;, roles: [ { role: &quot;root&quot;, db: &quot;admin&quot; } ] }); 打算将其做成脚本 #用shell实现 经过查阅，发现shell的 &lt;&lt;EOF 可以实现，查阅资料 <a href="http://my.oschina.net/u/1032146/blog/146941">http://my.oschina.net/u/1032146/blog/146941</a> 应该可以实现,于是写了脚本 #!/bin/bash mongo admin &lt;&lt; EOF db.createUser({ user: &lsquo;root&rsquo;, pwd: &lsquo;root&rsquo;, roles: [ { role: &quot;root&quot;, db: &quot;admin&quot; } ] }); exit; EOF 在mongo 启动的容器内执行脚本，成功！ #直接写脚本启动容器(error) !/bin/bash docker run &ndash;name mongodb</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="http://blog.qwding.com/persional/main/" class="button big">Continue Reading</a></li>
+            <li><a href="http://blog.qwding.com/post/shell_exec_db/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -301,7 +301,7 @@
                     
 
                     
-                        Category
+                        Categories
                     
                 
             </li>
@@ -310,76 +310,13 @@
 
     
     
-        <li><a href='/categories/live'>live</a></li>
+        <li><a href='/categories/shell'>shell</a></li>
     
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://blog.qwding.com/post/main/">一个开始</a></h2>
-        
-        
-            <p>One start.</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-04-08'>
-            April 8, 2016</time>
-        <span class="author"></span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
+        <li><a href='/categories/docker'>docker</a></li>
     
-
-    <p>写点博客总是好的 长点心，写点博客，少打游戏。</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/main/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
+        <li><a href='/categories/mysql'>mysql</a></li>
     
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-tags">&nbsp;</i>
-                    
-
-                    
-                        Category
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/live'>live</a></li>
+        <li><a href='/categories/mongo'>mongo</a></li>
     
 </ul>
 
@@ -419,7 +356,7 @@
             
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/live/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/mysql/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -666,7 +603,7 @@
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/live/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/mysql/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

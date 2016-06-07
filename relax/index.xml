@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Relaxes on qwding的blog</title>
+    <title>Relaxes on QWDing blog</title>
     <link>http://blog.qwding.com/relax/</link>
-    <description>Recent content in Relaxes on qwding的blog</description>
+    <description>Recent content in Relaxes on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Thu, 14 Apr 2016 18:18:02 +0800</lastBuildDate>
     <atom:link href="http://blog.qwding.com/relax/index.xml" rel="self" type="application/rss+xml" />
     

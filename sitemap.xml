@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://blog.qwding.com/</loc>
-    <lastmod>2016-06-07T19:19:58+08:00</lastmod>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.qwding.com/post/gotest_map_array_slice/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
   </url>
   
   <url>

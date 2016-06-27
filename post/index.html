@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://blog.qwding.com/post/" />
 
 
-<meta property="og:updated_time" content="2016-06-07T19:19:58&#43;08:00"/>
+<meta property="og:updated_time" content="2016-06-27T14:28:44&#43;08:00"/>
 
 
 
@@ -228,11 +228,11 @@
 
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/shell_exec_db/"><p>shell execute mongo/mysql which start by docker.</p></a>
+                        <a href="http://blog.qwding.com/post/gotest_map_array_slice/"><p>go map,slice,array 遍历性能测试 </p></a>
                     </li>
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/"><p>golang: change instance address in his method</p></a>
+                        <a href="http://blog.qwding.com/post/shell_exec_db/"><p>shell execute mongo/mysql which start by docker.</p></a>
                     </li>
                 
             </ul>
@@ -248,6 +248,85 @@
           
           <h2>2016</h2>
           
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/gotest_map_array_slice/">go map,slice,array 遍历性能测试 </a></h2>
+        
+        
+            <p>golang testing about iterating map,slice,array.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-06-27'>
+            June 27, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>#就是随便试试 听说goalng的map和slice的遍历性能差的不是一点半点，于是没事写个benchmark来玩玩 代码 package testings import( &quot;testing&quot; &quot;strconv&quot; ) var length = 1000 var maps map[string]string var slices []string var arrays [1000]string func init(){ maps = make(map[string]string,length) slices = make([]string,length) for i:=0;i&lt;length;i++{ maps[strconv.Itoa(i)] = &quot;abc&quot; slices[i] = &quot;abc&quot; arrays[i] = &quot;abc&quot; } } func BenchmarkIterateMap(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range maps{ } } } func BenchmarkIterateSlices(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range slices{ } } } func BenchmarkIterateArrays(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range arrays{ } } } func BenchmarkIterateMapF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range maps{ _ = k } } } func BenchmarkIterateSlicesF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range slices{ _ = k } } } func BenchmarkIterateArraysF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range arrays{ _ = k } } } func BenchmarkIterateSlicesFor(b *testing.B){ for i:=0;i&lt;b.N;i++{ for j:=0;j&lt;length;j++{ _ = slices[j] } } } func BenchmarkIterateArraysFor(b *testing.B){ for i:=0;i&lt;b.N;i++{ for j:=0;j&lt;length;j++{ _= arrays[j] } } } #测试结果 ➜ testings git:(master) ✗ go test -bench=.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/gotest_map_array_slice/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/golang'>golang</a></li>
+    
+        <li><a href='/categories/map'>map</a></li>
+    
+        <li><a href='/categories/slice'>slice</a></li>
+    
+        <li><a href='/categories/array'>array</a></li>
+    
+        <li><a href='/categories/testing'>testing</a></li>
+    
+        <li><a href='/categories/benchmark'>benchmark</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
              <article class="post">
     <header>
     <div class="title">
@@ -721,13 +800,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/shell_exec_db/">shell execute mongo/mysql which start by docker.</a></h3>
+                                <h3><a href="http://blog.qwding.com/post/gotest_map_array_slice/">go map,slice,array 遍历性能测试 </a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-06-07'>
-                                    June 7, 2016</time>
+                                    '2016-06-27'>
+                                    June 27, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -735,13 +814,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/">golang: change instance address in his method</a></h3>
+                                <h3><a href="http://blog.qwding.com/post/shell_exec_db/">shell execute mongo/mysql which start by docker.</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-06-01'>
-                                    June 1, 2016</time>
+                                    '2016-06-07'>
+                                    June 7, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -788,26 +867,8 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/golang/">golang</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>
@@ -824,25 +885,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/game/">game</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hexo/">hexo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/docker/">docker</a>
+                                <a href="/categories/array/">array</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -869,7 +912,16 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/pointer/">pointer</a>
+                                <a href="/categories/portus/">portus</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/shell/">shell</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -879,6 +931,78 @@
                         <article>
                             <header>
                                 <a href="/categories/registry/">registry</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/map/">map</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/benchmark/">benchmark</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/docker/">docker</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/slice/">slice</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/testing/">testing</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pointer/">pointer</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/game/">game</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

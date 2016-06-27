@@ -6,8 +6,146 @@
     <description>Recent content on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jun 2016 19:19:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jun 2016 14:28:44 +0800</lastBuildDate>
     <atom:link href="http://blog.qwding.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>go map,slice,array 遍历性能测试 </title>
+      <link>http://blog.qwding.com/post/gotest_map_array_slice/</link>
+      <pubDate>Mon, 27 Jun 2016 14:28:44 +0800</pubDate>
+      
+      <guid>http://blog.qwding.com/post/gotest_map_array_slice/</guid>
+      <description>
+
+&lt;h1 id=&#34;就是随便试试:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#就是随便试试&lt;/h1&gt;
+
+&lt;p&gt;听说goalng的map和slice的遍历性能差的不是一点半点，于是没事写个benchmark来玩玩
+代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package testings
+
+import(
+	&amp;quot;testing&amp;quot;
+	&amp;quot;strconv&amp;quot;
+)
+
+var length = 1000
+var maps map[string]string
+var slices []string
+var arrays [1000]string
+
+func init(){
+	maps = make(map[string]string,length)
+	slices = make([]string,length)
+	for i:=0;i&amp;lt;length;i++{
+		maps[strconv.Itoa(i)] = &amp;quot;abc&amp;quot;
+		slices[i] = &amp;quot;abc&amp;quot;
+		arrays[i] = &amp;quot;abc&amp;quot;
+	}
+
+}
+
+
+func BenchmarkIterateMap(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,_ = range maps{
+		}
+	}
+}
+
+func BenchmarkIterateSlices(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,_ = range slices{
+		}
+	}
+}
+
+func BenchmarkIterateArrays(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,_ = range arrays{
+		}
+	}
+}
+
+func BenchmarkIterateMapF(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,k := range maps{
+			_ = k
+		}
+	}
+}
+
+func BenchmarkIterateSlicesF(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,k := range slices{
+			_ = k
+		}
+	}
+}
+
+func BenchmarkIterateArraysF(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for _,k := range arrays{
+			_ = k
+		}
+	}
+}
+
+func BenchmarkIterateSlicesFor(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for j:=0;j&amp;lt;length;j++{
+			_ = slices[j]
+		}
+	}
+}
+
+func BenchmarkIterateArraysFor(b *testing.B){
+	for i:=0;i&amp;lt;b.N;i++{
+		for j:=0;j&amp;lt;length;j++{
+			_= arrays[j]
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试结果:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#测试结果&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  testings git:(master) ✗ go test -bench=. iterate_map_vs_slice_vs_array_test.go
+testing: warning: no tests to run
+PASS
+BenchmarkIterateMap-4      	  100000	     20544 ns/op
+BenchmarkIterateSlices-4   	 5000000	       368 ns/op
+BenchmarkIterateArrays-4   	 5000000	       371 ns/op
+BenchmarkIterateMapF-4     	  100000	     21685 ns/op
+BenchmarkIterateSlicesF-4  	 2000000	       812 ns/op
+BenchmarkIterateArraysF-4  	 1000000	      1036 ns/op
+BenchmarkIterateSlicesFor-4	 1000000	      1199 ns/op
+BenchmarkIterateArraysFor-4	 1000000	      1024 ns/op
+ok  	command-line-arguments	14.858s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;看数据:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#看数据&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先看前面三个方法，只是遍历，没有应用数据，大小都是1000，map 居然是slice和array的57倍之多。&lt;/li&gt;
+&lt;li&gt;接下来三个方法是应用到了数据，map性能损耗基本没有增多多少，但是slice和array却增多一倍多（还不了解为什么）&lt;/li&gt;
+&lt;li&gt;后面两个表明 array的按index取和range取性能不变，但是slice是有差距的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;数据不是固定的:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#数据不是固定的&lt;/h3&gt;
+
+&lt;p&gt;将slice和map的大小分布调成10，100，1000，10000，得出的性能比，map/slice是不固定的，也没有发现什么规律(测试不够充分)，但是一般都在将近30倍以上。但是可以得出遍历性能确实差很多。&lt;/p&gt;
+
+&lt;h3 id=&#34;slice-不同情况性能差距也比较大:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#slice 不同情况性能差距也比较大&lt;/h3&gt;
+
+&lt;h3 id=&#34;遗留问题:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#遗留问题&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;slice 为什么只遍历和取到数据还有一倍多的性能损耗&lt;/li&gt;
+&lt;li&gt;slice 的index取数和range取数性能也有差距&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>shell execute mongo/mysql which start by docker.</title>

@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://blog.qwding.com/</loc>
-    <lastmod>2016-08-28T23:53:36+08:00</lastmod>
+    <lastmod>2016-08-29T15:08:37+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.qwding.com/post/get_host_user_in_container/</loc>
+    <lastmod>2016-08-29T15:08:37+08:00</lastmod>
   </url>
   
   <url>

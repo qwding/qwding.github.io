@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://blog.qwding.com/post/" />
 
 
-<meta property="og:updated_time" content="2016-04-08T11:57:57&#43;08:00"/>
+<meta property="og:updated_time" content="2016-04-08T18:51:19&#43;08:00"/>
 
 
 
@@ -228,11 +228,11 @@
 
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/evernote_vs_youdao/"><p>Evernote vs youdao</p></a>
+                        <a href="http://blog.qwding.com/post/get_host_user_in_container/"><p>Docker容器里获取宿主机用户</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/gotest_map_array_slice/"><p>go map,slice,array 遍历性能测试 </p></a>
+                        <a href="http://blog.qwding.com/post/evernote_vs_youdao/"><p>Evernote vs youdao</p></a>
                     </li>
                 
             </ul>
@@ -248,6 +248,56 @@
           
           <h2>2016</h2>
           
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/get_host_user_in_container/">Docker容器里获取宿主机用户</a></h2>
+        
+        
+            <p>Get host user in docker container </p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-08-29'>
+            August 29, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>尝试方法 映射宿主机文件到容器，试过几个文件，但是都效果并不好 启动容器前执行命令将用户写入文件，再启动容器 echo <code>echo $USER</code> &gt; tmp.file &amp;&amp; docker run -it alpine /bin/sh 但是遇到问题，就是我在容器的里的程序删除文件会遇到文件忙，没有深究原因 突然想到了我们启动容器的时候经常用 -v pwd:/folder。这样应该是执行了shell命令，那么能不能在冒号右侧执行呢。于是测试了一下发现可行。 将命令改为 docker run -it -e HOSTUSER=<code>echo $USER</code> apline /bin/sh //测试 $/ echo $HOSTUSER 结果正确 举一反三 既然可以这么获得用户名，那么其实也可以获得其他宿主机信息了，系统信息，能用shell获得的命令，都可以在启动容器时候传入环境变量</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/get_host_user_in_container/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+
+            
              <article class="post">
     <header>
     <div class="title">
@@ -871,13 +921,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/evernote_vs_youdao/">Evernote vs youdao</a></h3>
+                                <h3><a href="http://blog.qwding.com/post/get_host_user_in_container/">Docker容器里获取宿主机用户</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-08-28'>
-                                    August 28, 2016</time>
+                                    '2016-08-29'>
+                                    August 29, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -885,13 +935,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/gotest_map_array_slice/">go map,slice,array 遍历性能测试 </a></h3>
+                                <h3><a href="http://blog.qwding.com/post/evernote_vs_youdao/">Evernote vs youdao</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-06-27'>
-                                    June 27, 2016</time>
+                                    '2016-08-28'>
+                                    August 28, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -947,25 +997,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/mysql/">mysql</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/slice/">slice</a>
+                                <a href="/categories/hugo/">hugo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -983,7 +1015,52 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/evernote/">evernote</a>
+                                <a href="/categories/mysql/">mysql</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mongo/">mongo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/benchmark/">benchmark</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1001,7 +1078,16 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
+                                <a href="/categories/slice/">slice</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/array/">array</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1028,7 +1114,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/game/">game</a>
+                                <a href="/categories/evernote/">evernote</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1046,33 +1132,6 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/array/">array</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/benchmark/">benchmark</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mongo/">mongo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/registry/">registry</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -1082,16 +1141,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hugo/">hugo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hexo/">hexo</a>
+                                <a href="/categories/game/">game</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

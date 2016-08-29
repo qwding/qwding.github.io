@@ -1,17 +1,11 @@
-
-
-
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>about - QWDing blog</title>
+            
+                <title>Docker容器里获取宿主机用户</title>
+            
         
 
         <meta charset="utf-8" />
@@ -21,10 +15,10 @@
 
 
         
+            <meta name="author" content="qwding">
         
-            
-                <meta name="description" content="懒癌晚期">
-            
+        
+            <meta name="description" content="Get host user in docker container ">
         
 
         
@@ -33,18 +27,18 @@
 
 
 
-<meta name="twitter:title" content="about"/>
-<meta name="twitter:description" content="过山车式的履历 一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。 转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。 但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。 与其来说是来做后台开发，不如说是来做ops的&hellip; 好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。 懒癌晚期 都说程序员呆板，技术宅，爱加班。我发现我一样不占。 我不仅不爱加班，更不是技术宅。 一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&hellip; 主要还是玩性太大吧。 ID 我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业 很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~"/>
+<meta name="twitter:title" content="Docker容器里获取宿主机用户"/>
+<meta name="twitter:description" content="Get host user in docker container "/>
 
 
 
-        <meta property="og:title" content="about" />
-<meta property="og:description" content="过山车式的履历 一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。 转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。 但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。 与其来说是来做后台开发，不如说是来做ops的&hellip; 好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。 懒癌晚期 都说程序员呆板，技术宅，爱加班。我发现我一样不占。 我不仅不爱加班，更不是技术宅。 一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&hellip; 主要还是玩性太大吧。 ID 我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业 很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~" />
+        <meta property="og:title" content="Docker容器里获取宿主机用户" />
+<meta property="og:description" content="Get host user in docker container " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.qwding.com/about/" />
+<meta property="og:url" content="http://blog.qwding.com/post/get_host_user_in_container/" />
 
 
-<meta property="og:updated_time" content="2016-04-01T18:18:07&#43;08:00"/>
+<meta property="og:updated_time" content="2016-08-29T15:08:37&#43;08:00"/>
 
 
 
@@ -56,12 +50,12 @@
 
 
         
-<meta itemprop="name" content="about">
-<meta itemprop="description" content="过山车式的履历 一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。 转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。 但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。 与其来说是来做后台开发，不如说是来做ops的&hellip; 好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。 懒癌晚期 都说程序员呆板，技术宅，爱加班。我发现我一样不占。 我不仅不爱加班，更不是技术宅。 一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&hellip; 主要还是玩性太大吧。 ID 我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业 很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~">
+<meta itemprop="name" content="Docker容器里获取宿主机用户">
+<meta itemprop="description" content="Get host user in docker container ">
 
 
-<meta itemprop="dateModified" content="2016-04-01T18:18:07&#43;08:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="dateModified" content="2016-08-29T15:08:37&#43;08:00" />
+<meta itemprop="wordCount" content="34">
 
 
 
@@ -98,6 +92,7 @@
         
         <div id="wrapper">
 
+    
     
 <header id="header">
     
@@ -146,6 +141,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -260,53 +259,219 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&text=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
+        
+        
         <article class="post">
-            
-            <header>
+    <header>
     <div class="title">
         
-            <h1><a href="http://blog.qwding.com/about/">about</a></h1>
+            <h1><a href="http://blog.qwding.com/post/get_host_user_in_container/">Docker容器里获取宿主机用户</a></h1>
             
+        
+        
+            <p>Get host user in docker container </p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-08-29'>
+            August 29, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
         
         
     </div>
 </header>
 
-            <div id="content">
-                
 
-<h3 id="过山车式的履历:6083a88ee3411b0d17ce02d738f69d47">过山车式的履历</h3>
+    <section id="social-share">
+        <ul class="icons">
+            
 
-<p>一开始在高大上的double e做测试，半年后实在忍受不了傻逼式的点点点，担心式的写英文邮件和各种测试用例的文字游戏。遂放弃了，更可以说是逃避了。</p>
 
-<p>转而做golang开发，语法简洁，开发迅速，性能强大等等让我很喜欢他。并很感谢我上个公司给了我很好的机会和平台，一年内得到很多锻炼。</p>
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&text=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
 
-<p>但是懒癌不能忍受周末加班还是让我跳了槽，来到了现公司。 却发现有种被忽悠来的感觉。</p>
 
-<p>与其来说是来做后台开发，不如说是来做ops的&hellip;</p>
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
 
-<p>好吧！跨度好大。鉴于公司地理和上班制度以及拥有的并发量还是忍了。</p>
 
-<h3 id="懒癌晚期:6083a88ee3411b0d17ce02d738f69d47">懒癌晚期</h3>
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
 
-<p>都说程序员呆板，技术宅，爱加班。我发现我一样不占。</p>
 
-<p>我不仅不爱加班，更不是技术宅。</p>
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
 
-<p>一有时间，先想到的是玩玩玩。并不会在家写代码研究东西&hellip;</p>
 
-<p>主要还是玩性太大吧。</p>
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
 
-<h3 id="id:6083a88ee3411b0d17ce02d738f69d47">ID</h3>
 
-<p>我在网易魔兽官方对战平台打dota的id叫 牛逼ID 和 卡拉赞毕业</p>
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f&title=Docker%e5%ae%b9%e5%99%a8%e9%87%8c%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e6%9c%ba%e7%94%a8%e6%88%b7" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
 
-<p>很好记，如果有有人看到打个招呼，玩的开心，被人打招呼玩的还是比较亲的~~~</p>
 
-            </div>
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fblog.qwding.com%2fpost%2fget_host_user_in_container%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    <div id="content">
+        
+
+<h1 id="尝试方法:cd3c2658114a3f3f4bebfbdac284dca6">尝试方法</h1>
+
+<ol>
+<li>映射宿主机文件到容器，试过几个文件，但是都效果并不好</li>
+<li>启动容器前执行命令将用户写入文件，再启动容器
+<code>
+echo `echo $USER` &gt; tmp.file &amp;&amp; docker run -it alpine /bin/sh
+</code>
+但是遇到问题，就是我在容器的里的程序删除文件会遇到文件忙，没有深究原因</li>
+<li>突然想到了我们启动容器的时候经常用 -v <code>pwd</code>:/folder。这样应该是执行了shell命令，那么能不能在冒号右侧执行呢。于是测试了一下发现可行。</li>
+</ol>
+
+<p>将命令改为</p>
+
+<pre><code>docker run -it -e HOSTUSER=`echo $USER` apline /bin/sh
+
+//测试
+$/ echo $HOSTUSER 
+结果正确
+</code></pre>
+
+<h3 id="举一反三:cd3c2658114a3f3f4bebfbdac284dca6">举一反三</h3>
+
+<p>既然可以这么获得用户名，那么其实也可以获得其他宿主机信息了，系统信息，能用shell获得的命令，都可以在启动容器时候传入环境变量</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://blog.qwding.com/post/evernote_vs_youdao/"
+                class="button big previous">Evernote vs youdao</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'puppy';
+    var disqus_identifier = 'http:\/\/blog.qwding.com\/post\/get_host_user_in_container\/';
+    var disqus_title = 'Docker容器里获取宿主机用户';
+    var disqus_url = 'http:\/\/blog.qwding.com\/post\/get_host_user_in_container\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
+    
+
+
     </div>
     
 <section id="sidebar">

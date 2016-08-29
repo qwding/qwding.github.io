@@ -6,8 +6,43 @@
     <description>Recent content on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Aug 2016 23:53:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Aug 2016 15:08:37 +0800</lastBuildDate>
     <atom:link href="http://blog.qwding.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker容器里获取宿主机用户</title>
+      <link>http://blog.qwding.com/post/get_host_user_in_container/</link>
+      <pubDate>Mon, 29 Aug 2016 15:08:37 +0800</pubDate>
+      
+      <guid>http://blog.qwding.com/post/get_host_user_in_container/</guid>
+      <description>
+
+&lt;h1 id=&#34;尝试方法:cd3c2658114a3f3f4bebfbdac284dca6&#34;&gt;尝试方法&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;映射宿主机文件到容器，试过几个文件，但是都效果并不好&lt;/li&gt;
+&lt;li&gt;启动容器前执行命令将用户写入文件，再启动容器
+&lt;code&gt;
+echo `echo $USER` &amp;gt; tmp.file &amp;amp;&amp;amp; docker run -it alpine /bin/sh
+&lt;/code&gt;
+但是遇到问题，就是我在容器的里的程序删除文件会遇到文件忙，没有深究原因&lt;/li&gt;
+&lt;li&gt;突然想到了我们启动容器的时候经常用 -v &lt;code&gt;pwd&lt;/code&gt;:/folder。这样应该是执行了shell命令，那么能不能在冒号右侧执行呢。于是测试了一下发现可行。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;将命令改为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -it -e HOSTUSER=`echo $USER` apline /bin/sh
+
+//测试
+$/ echo $HOSTUSER 
+结果正确
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;举一反三:cd3c2658114a3f3f4bebfbdac284dca6&#34;&gt;举一反三&lt;/h3&gt;
+
+&lt;p&gt;既然可以这么获得用户名，那么其实也可以获得其他宿主机信息了，系统信息，能用shell获得的命令，都可以在启动容器时候传入环境变量&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Evernote vs youdao</title>

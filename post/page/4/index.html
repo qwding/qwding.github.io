@@ -2,8 +2,6 @@
 
 
     
-        
-    
 
 
 
@@ -13,7 +11,7 @@
 <html>
     <head>
         
-            <title>Docker Posts - QWDing blog</title>
+            <title>Posts - QWDing blog</title>
         
 
         <meta charset="utf-8" />
@@ -30,13 +28,13 @@
         
 
         
-        <meta property="og:title" content="Docker" />
+        <meta property="og:title" content="Posts" />
 <meta property="og:description" content="懒癌晚期" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.qwding.com/categories/docker/" />
+<meta property="og:url" content="http://blog.qwding.com/post/" />
 
 
-<meta property="og:updated_time" content="2016-10-19T10:28:28&#43;08:00"/>
+<meta property="og:updated_time" content="2016-04-08T11:57:57&#43;08:00"/>
 
 
 
@@ -47,7 +45,7 @@
 
 
         
-<meta itemprop="name" content="Docker">
+<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="懒癌晚期">
 
 
@@ -85,7 +83,7 @@
     
 <header id="header">
     
-        <h2><a href="/">QWDing blog</i></a></h2>
+        <h1><a href="/">QWDing blog</i></a></h1>
     
 
     <nav class="links">
@@ -246,10 +244,11 @@
 
     
     <div id="main">
-        <h1>Docker</h1>
         
-        
-            <article class="post">
+          
+          <h2>2016</h2>
+          
+             <article class="post">
     <header>
     <div class="title">
         
@@ -321,8 +320,279 @@
     </footer>
 </article>
 
+            
+             <article class="post">
+    <header>
+    <div class="title">
         
-            <article class="post">
+            <h2><a href="http://blog.qwding.com/post/slice_args/">How golang slice Semi - pointer.</a></h2>
+        
+        
+            <p>golang slice怎么个半指针传递</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-10-09'>
+            October 9, 2016</time>
+        <span class="author"></span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>起因 刷leetcode的77题时候，使用了递归方法，并且使用数组时候如下 result := make([][]int, 0, length+1) recursive([]int{}, 1, n, k, result) 第一次使用了cap声明slice，这样的好处是append时候在length后添加数据，并且保证长度够，append时候不会重新申请地址 但是跑的时候发现，recursive()后，在返回到此段代码，居然什么都没有！result值没变。 什么？ slice不是传说的指针传递么？ 先看下官方数组结构样子 当然，一直知道数组是半指针，就是将数组的地址的值传进去。在函数里是改变不了指针的值，但是可以操作指针指向的数据，详细的google有很多 我想象的是这样：函数收到的是数组的头地址(就是图最上面的指针）,length和cap等数据，这样可以完全接管数组的操作了 但是上述起因里出现的问题却不是这样，到底是什么原因呢？于是写了测试代码 func main() { result := make([]int, 0, 10) addr := &amp;result fmt.Println(&quot;result:&quot;, result, &quot;addr:&quot;, unsafe.Pointer(addr)) for i := 0; i &lt; 10; i++ { functions(result) result = append(result, i) //appendData(result,i) } fmt.Println(&quot;result:&quot;, result, &quot;addr:&quot;, unsafe.Pointer(addr)) } func functions(arr []int) { addr := &amp;arr if len(arr) &gt; 0 { fmt.Println(&quot;arr:&quot;, arr,</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/slice_args/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/slice'>slice</a></li>
+    
+        <li><a href='/categories/golang'>golang</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/get_host_user_in_container/">Docker容器里获取宿主机用户</a></h2>
+        
+        
+            <p>Get host user in docker container </p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-08-29'>
+            August 29, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>尝试方法 映射宿主机文件到容器，试过几个文件，但是都效果并不好 启动容器前执行命令将用户写入文件，再启动容器 echo <code>echo $USER</code> &gt; tmp.file &amp;&amp; docker run -it alpine /bin/sh 但是遇到问题，就是我在容器的里的程序删除文件会遇到文件忙，没有深究原因 突然想到了我们启动容器的时候经常用 -v pwd:/folder。这样应该是执行了shell命令，那么能不能在冒号右侧执行呢。于是测试了一下发现可行。 将命令改为 docker run -it -e HOSTUSER=<code>echo $USER</code> apline /bin/sh //测试 $/ echo $HOSTUSER 结果正确 举一反三 既然可以这么获得用户名，那么其实也可以获得其他宿主机信息了，系统信息，能用shell获得的命令，都可以在启动容器时候传入环境变量</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/get_host_user_in_container/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/evernote_vs_youdao/">Evernote vs youdao</a></h2>
+        
+        
+            <p>印象笔记和有道云笔记对比</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-08-28'>
+            August 28, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Evernote 之前一直用evernote，也没发现什么优点，本人流量一直没有超过60M/月限制，所以基本来说只用云笔记部分 编辑功能，不得不吐槽，我除了会在文本前面加点或者用tab分级外，其他什么编辑功能都不会，甚至有时候被他的带格式粘贴搞迷糊好半天 编辑工具栏，默认的居然是黑色，字体已经是黑色了，你这个黑色有毛用啊。调个颜色半天都有次还调不出来。 前几天有出现了限制2台硬件绑定。纳尼？？？弃用弃用，没商量 有道云笔记 因为国内的好像也就是有道了，其他的有些偏向团队，有些偏向会议之类的 发现有道的分级比Evernote爽一万倍，虽然功能简单，但是从之前那么蛋疼转过来爽了真的不是一点半点 发现有道V2.1.0版本居然可以直接将pdf等直接传到目录下直接观看，保存文档，整理笔记更近一步啊！ 有道居然可以用markdown，一些用markdown写的文档直接保存就ok了 有道有个缺点，就是一次我只圈中了一小部分文档复制，粘贴的时候居然带了整行的格式，日了狗了，恰恰粘贴的是密码，而且是那种特殊密码，以为是密码问题了，搞了好久 无意间发现点击链接直接在有道内部上网，内部内置了浏览器？吐槽一下，有毛用啊，我肯定是去浏览器查看链接啊 VS 查看两者之后是不是感觉有道云笔记完爆了Evernote，但是，还别急 用了一阵后，发现 有道居然超级吃内存，我8G的mac，刚开始用的时候，转移了部分笔记，已经吃到了800M，今天有略加了几个pdf，已经超过1.1G了，笔记容量加起来都不过几十M啊，简直可怕！！！相比之下，evernote一般都保持在200M左右，还是比较安静的，从来不会因为内存着急。 据他人说，有道想修改附件的话，必须下载下来，编辑后再传上去才行，但是evernote直接可以在线编辑 有道虽然有markdown，但是不能搜索，原因当然是显示的时候已经转成html，而html并不支持搜索。可是你也可以在md原文搜索啊！但是并没有，也就是说我写了md，就丧失了搜索功能。而我认为在云笔记这么庞大的东西面前，搜索才是最重要的，类似于mac的alfred，快速定位才行。相比evernote搜索用着还是可以接受的，当前目录和全局搜索两选项，而有道只能在当前目录下，如果想搜全局还有用鼠标在点下全局文件夹，恰恰我用的最多的是全局搜索。 总结 总的来说，两个都不想用 Evernote编辑功能不爽，还有设备限制(本人恰巧需要三台) 有道云笔记太吃内存，如果不吃这么多内存基本就用了，但是吃这么多内存搞得我8G都不够用了 基本想找一款更好的云笔记软件，也希望获得推荐 使用体验持续更新&hellip;</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/evernote_vs_youdao/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/evernote'>evernote</a></li>
+    
+        <li><a href='/categories/youdao'>youdao</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/gotest_map_array_slice/">go map,slice,array 遍历性能测试 </a></h2>
+        
+        
+            <p>golang testing about iterating map,slice,array.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-06-27'>
+            June 27, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>#就是随便试试 听说goalng的map和slice的遍历性能差的不是一点半点，于是没事写个benchmark来玩玩 代码 package testings import( &quot;testing&quot; &quot;strconv&quot; ) var length = 1000 var maps map[string]string var slices []string var arrays [1000]string func init(){ maps = make(map[string]string,length) slices = make([]string,length) for i:=0;i&lt;length;i++{ maps[strconv.Itoa(i)] = &quot;abc&quot; slices[i] = &quot;abc&quot; arrays[i] = &quot;abc&quot; } } func BenchmarkIterateMap(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range maps{ } } } func BenchmarkIterateSlices(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range slices{ } } } func BenchmarkIterateArrays(b *testing.B){ for i:=0;i&lt;b.N;i++{ for <em>,</em> = range arrays{ } } } func BenchmarkIterateMapF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range maps{ _ = k } } } func BenchmarkIterateSlicesF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range slices{ _ = k } } } func BenchmarkIterateArraysF(b *testing.B){ for i:=0;i&lt;b.N;i++{ for _,k := range arrays{ _ = k } } } func BenchmarkIterateSlicesFor(b *testing.B){ for i:=0;i&lt;b.N;i++{ for j:=0;j&lt;length;j++{ _ = slices[j] } } } func BenchmarkIterateArraysFor(b *testing.B){ for i:=0;i&lt;b.N;i++{ for j:=0;j&lt;length;j++{ _= arrays[j] } } } #测试结果 ➜ testings git:(master) ✗ go test -bench=.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/gotest_map_array_slice/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/golang'>golang</a></li>
+    
+        <li><a href='/categories/map'>map</a></li>
+    
+        <li><a href='/categories/slice'>slice</a></li>
+    
+        <li><a href='/categories/array'>array</a></li>
+    
+        <li><a href='/categories/testing'>testing</a></li>
+    
+        <li><a href='/categories/benchmark'>benchmark</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
     <header>
     <div class="title">
         
@@ -396,12 +666,296 @@
     </footer>
 </article>
 
+            
+             <article class="post">
+    <header>
+    <div class="title">
         
+            <h2><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/">golang: change instance address in his method</a></h2>
+        
+        
+            <p>在实例方法内修改实例地址</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-06-01'>
+            June 1, 2016</time>
+        <span class="author"></span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>前提回顾 对于结构体中的指针应用，大部分可能知道的是如下两代码的区别 func (a *AA) funcA() func (a AA) funcB() 区别在于，我们在funcA内修改a的值，是可以成功的，但是在funcB修改a的值是失败的。 因为funcA中的a是指针传递，funcB中的a是值传递。这个大家都知道。 今天话题 先上代码 package main import ( &quot;fmt&quot; ) type AA struct { xyz string opq string } func (this *AA) Change() { b := &amp;AA{xyz: &quot;xyz1&quot;, opq: &quot;opq1&quot;} this = b fmt.Println(&quot;in this:&quot;, this, &quot;addr:&quot;, &amp;this) } func main() { a := &amp;AA{xyz: &quot;xyz0&quot;, opq: &quot;opq0&quot;} fmt.Println(&quot;before a:&quot;, a, &quot;addr:&quot;, &amp;a) a.Change() fmt.Println(&quot;after a:&quot;, a, &quot;addr:&quot;, &amp;a) }</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/golang'>golang</a></li>
+    
+        <li><a href='/categories/pointer'>pointer</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/portus/">Install portus by docker and configration read.</a></h2>
+        
+        
+            <p>portus的docker容器搭建</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-04-20'>
+            April 20, 2016</time>
+        <span class="author"></span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>一般形式 在官方文档，或者百度谷歌，搜到的portus一般都是compose形式搭建，这样好处是操作无脑 但是一般情况下我们肯定是自己要更灵活一些的，肯定用docker容器形式更舒服一点。可是去dockerhub一搜，各种版本的镜像，查看dockerfile很多人都自己加了一些内容，对于不会ruby的人来说，并不知道那些操作都说干啥的。 自己研究研究 github master分支上有dockerfile，如下 FROM library/rails:4.2.2 MAINTAINER Flavio Castelli &lt;fcastelli@suse.com&gt; ENV COMPOSE=1 EXPOSE 3000 WORKDIR /portus COPY Gemfile* ./ RUN bundle install &ndash;retry=3 # Install phantomjs, this is required for testing and development purposes # There are no official deb packages for it, hence we built it inside of the # open build service. RUN echo &quot;deb <a href="http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/">http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/</a> ./&quot; &gt;&gt; /etc/apt/sources.list RUN wget <a href="http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/Release.key">http://download.opensuse.org/repositories/home:/flavio_castelli:/phantomjs/Debian_8.0/Release.key</a> &amp;&amp; \ apt-key add Release.key &amp;&amp; \ rm Release.key RUN apt-get update &amp;&amp; \ apt-get install -y &ndash;no-install-recommends phantomjs &amp;&amp; \ rm -rf /var/lib/apt/lists/* ADD .</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/portus/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/portus'>portus</a></li>
+    
+        <li><a href='/categories/registry'>registry</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/hugo_vs_hexo/">hugo vs hexo</a></h2>
+        
+        
+            <p>contrast hugo with hexo</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-04-08'>
+            April 8, 2016</time>
+        <span class="author"></span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>hugo 和 hexo 对比 主要是查阅了一下很多人经验，并汇总了一下对比结果 hexo hugo 速度 快 特别快 主题 几大主题基础上延伸,总量更多 很多,良好主题生态圈 安装及更新 更新容易有坑，因为依赖包 一个binary,安装更新快 评论系统 支持disqus等 支持disqus等 应用方面 博客适应性更强 非博客适应性更强 文档 有中文文档 文档超详细，中文不全 功能 分类,tag,多语言,i18n 分类,tag,series,wight,多语言 因为本身更喜欢golang，所以选择了hugo 分享一下查阅的资料 十种静态页面生成工具 hexo 文档 hexo 中文文档 hexo 一篇比较好的使用文章 hugo 文档 hugo 中文文档 hugo 主题 gitlab pages gitlab 8.3以后也出了github pages的功能，但只限gitlab-ee版本，需要付费 gitlab-ee docker安装 gitlab pages使用</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/hugo_vs_hexo/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/hugo'>hugo</a></li>
+    
+        <li><a href='/categories/hexo'>hexo</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/main/">一个开始</a></h2>
+        
+        
+            <p>One start.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-04-08'>
+            April 8, 2016</time>
+        <span class="author"></span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>写点博客总是好的 长点心，写点博客，少打游戏。</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/main/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/live'>live</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
+          
 
         
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="/post/page/3/"
+                class="button big previous">Previous Page</a></li>
     
 
     
@@ -429,7 +983,7 @@
             
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/docker/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/post/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -766,7 +1320,7 @@
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/docker/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/post/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

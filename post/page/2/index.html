@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://blog.qwding.com/post/" />
 
 
-<meta property="og:updated_time" content="2016-06-27T14:28:44&#43;08:00"/>
+<meta property="og:updated_time" content="2016-08-28T23:53:36&#43;08:00"/>
 
 
 
@@ -228,11 +228,11 @@
 
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/slice_args/"><p>How golang slice Semi - pointer.</p></a>
+                        <a href="http://blog.qwding.com/post/beego_runmode/"><p>beego 如何不同环境用不同的runmode</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://blog.qwding.com/post/get_host_user_in_container/"><p>Docker容器里获取宿主机用户</p></a>
+                        <a href="http://blog.qwding.com/post/slice_args/"><p>How golang slice Semi - pointer.</p></a>
                     </li>
                 
             </ul>
@@ -248,6 +248,79 @@
           
           <h2>2016</h2>
           
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://blog.qwding.com/post/beego_runmode/">beego 如何不同环境用不同的runmode</a></h2>
+        
+        
+            <p>Use different runmode of beego.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-10-19'>
+            October 19, 2016</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>beego runmode修改 除了配置文件设置runmode，想切换环境时候需要手动改，太麻烦，而且容易忘 想通过如下两种方法尝试，均无效： flag，但是beego本身并没有flag，简直行不通 官方文档里个的方法是 beego.Runmode = &ldquo;dev&rdquo;, 但其实这个方法很鸡肋，很蛋疼，因为读配置文件早在程序运行前执行了，而如果再程序里修改runmode，你在init里用的参数必然还是默认写的，用着基本蛋疼。 我在我本地beego 1.7的环境里又尝试了一下，发现已经没有这个方法了，可能作者也觉得确实蛋疼给删了吧。 环境变量改变 尝试将配置文件的runmode指定为环境变量，然后指定具体模式。发现居然成功了。不管怎么样，确实这个办法还是一个不错的解决方案了 加上docker更好用 因为本来用docker，这样直接在Dockerfile里设置ENV，部署线上的时候，直接用构建好的镜像启动就ok了，什么都不用改了。 懒人使人进步</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://blog.qwding.com/post/beego_runmode/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/beego'>beego</a></li>
+    
+        <li><a href='/categories/golang'>golang</a></li>
+    
+        <li><a href='/categories/docker'>docker</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
              <article class="post">
     <header>
     <div class="title">
@@ -993,13 +1066,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/slice_args/">How golang slice Semi - pointer.</a></h3>
+                                <h3><a href="http://blog.qwding.com/post/beego_runmode/">beego 如何不同环境用不同的runmode</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-10-09'>
-                                    October 9, 2016</time>
+                                    '2016-10-19'>
+                                    October 19, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -1007,13 +1080,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://blog.qwding.com/post/get_host_user_in_container/">Docker容器里获取宿主机用户</a></h3>
+                                <h3><a href="http://blog.qwding.com/post/slice_args/">How golang slice Semi - pointer.</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-08-29'>
-                                    August 29, 2016</time>
+                                    '2016-10-09'>
+                                    October 9, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -1052,16 +1125,7 @@
                         <article>
                             <header>
                                 <a href="/categories/golang/">golang</a>
-                                <span style="float:right;">3</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/live/">live</a>
-                                <span style="float:right;">2</span>
+                                <span style="float:right;">4</span>
                             </header>
                         </article>
                     </li>
@@ -1078,7 +1142,43 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/evernote/">evernote</a>
+                                <a href="/categories/docker/">docker</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/live/">live</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/youdao/">youdao</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/map/">map</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/testing/">testing</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1105,51 +1205,6 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hexo/">hexo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/array/">array</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/testing/">testing</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/benchmark/">benchmark</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/registry/">registry</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -1168,25 +1223,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/pointer/">pointer</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/youdao/">youdao</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/map/">map</a>
+                                <a href="/categories/benchmark/">benchmark</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1204,7 +1241,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/docker/">docker</a>
+                                <a href="/categories/pointer/">pointer</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1214,6 +1251,51 @@
                         <article>
                             <header>
                                 <a href="/categories/hugo/">hugo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/beego/">beego</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/evernote/">evernote</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/array/">array</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

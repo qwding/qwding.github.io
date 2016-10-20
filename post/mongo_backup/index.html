@@ -1,19 +1,11 @@
-
-
-
-    
-        
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>Pointer Posts - QWDing blog</title>
+            
+                <title>mongo 备份</title>
+            
         
 
         <meta charset="utf-8" />
@@ -23,33 +15,51 @@
 
 
         
+            <meta name="author" content="qwding">
         
-            
-                <meta name="description" content="懒癌晚期">
-            
         
-
+            <meta name="description" content="mongo backup">
         
-        <meta property="og:title" content="Pointer" />
-<meta property="og:description" content="懒癌晚期" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.qwding.com/categories/pointer/" />
-
-
-<meta property="og:updated_time" content="2016-06-01T19:19:58&#43;08:00"/>
-
-
-
-
-
-
-
-
 
         
-<meta itemprop="name" content="Pointer">
-<meta itemprop="description" content="懒癌晚期">
 
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="mongo 备份"/>
+<meta name="twitter:description" content="mongo backup"/>
+
+
+
+        <meta property="og:title" content="mongo 备份" />
+<meta property="og:description" content="mongo backup" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.qwding.com/post/mongo_backup/" />
+
+
+<meta property="og:updated_time" content="2016-10-20T10:37:02&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="mongo 备份">
+<meta itemprop="description" content="mongo backup">
+
+
+<meta itemprop="dateModified" content="2016-10-20T10:37:02&#43;08:00" />
+<meta itemprop="wordCount" content="154">
+
+
+
+<meta itemprop="keywords" content="array,beego,benchmark,docker,dockerfile,evernote,game,golang,hexo,hugo,live,map,mongo,mysql,pointer,portus,registry,shell,slice,testing,youdao," />
 
         
 
@@ -82,6 +92,7 @@
         
         <div id="wrapper">
 
+    
     
 <header id="header">
     
@@ -130,6 +141,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -244,19 +259,73 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&text=mongo%20%e5%a4%87%e4%bb%bd&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
-        <h1>Pointer</h1>
         
         
-            <article class="post">
+        <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/">golang: change instance address in his method</a></h2>
+            <h1><a href="http://blog.qwding.com/post/mongo_backup/">mongo 备份</a></h1>
+            
         
         
-            <p>在实例方法内修改实例地址</p>
+            <p>mongo backup</p>
         
     </div>
     <div class="meta">
@@ -265,9 +334,9 @@
         
 
         <time class="published"
-            datetime='2016-06-01'>
-            June 1, 2016</time>
-        <span class="author"></span>
+            datetime='2016-10-20'>
+            October 20, 2016</time>
+        <span class="author">qwding</span>
         
             <p>1 minute read</p>
         
@@ -275,14 +344,135 @@
     </div>
 </header>
 
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&text=mongo%20%e5%a4%87%e4%bb%bd&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f&title=mongo%20%e5%a4%87%e4%bb%bd" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fblog.qwding.com%2fpost%2fmongo_backup%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
     
 
-    <p>前提回顾 对于结构体中的指针应用，大部分可能知道的是如下两代码的区别 func (a *AA) funcA() func (a AA) funcB() 区别在于，我们在funcA内修改a的值，是可以成功的，但是在funcB修改a的值是失败的。 因为funcA中的a是指针传递，funcB中的a是值传递。这个大家都知道。 今天话题 先上代码 package main import ( &quot;fmt&quot; ) type AA struct { xyz string opq string } func (this *AA) Change() { b := &amp;AA{xyz: &quot;xyz1&quot;, opq: &quot;opq1&quot;} this = b fmt.Println(&quot;in this:&quot;, this, &quot;addr:&quot;, &amp;this) } func main() { a := &amp;AA{xyz: &quot;xyz0&quot;, opq: &quot;opq0&quot;} fmt.Println(&quot;before a:&quot;, a, &quot;addr:&quot;, &amp;a) a.Change() fmt.Println(&quot;after a:&quot;, a, &quot;addr:&quot;, &amp;a) }</p>
+    <div id="content">
+        
+
+<h1 id="mongo-备份:dff5b3233884f61ae2c2815811350b4d">mongo 备份</h1>
+
+<p>秉承方便简单，易搭建原则，还是用docker来实现,<a href="https://hub.docker.com/r/carlding/mongobackup/">镜像地址（https://hub.docker.com/r/carlding/mongobackup/）</a></p>
+
+<p>docker hub找到一个镜像，istepanov/mongodump可以实现本地monogo的备份，查阅其内部脚本，并没有开放传入远程数据库的接口，于是在此基础上改进</p>
+
+<p>Dockerfile</p>
+
+<pre><code>FROM istepanov/mongodump
+
+​MAINTAINER qwding 
+ADD backup.sh backup.sh
+ADD start.sh start.sh
+
+</code></pre>
+
+<p>backup.sh</p>
+
+<pre><code>#!/bin/bash
+set -e
+echo &quot;Job started: $(date)&quot;
+DATE=$(date +%Y%m%d_%H%M%S)
+FILE=&quot;/backup/backup-$DATE.tar.gz&quot;
+echo &quot;mongodump -h $MONGO_PORT_27017_TCP_ADDR -p $MONGO_PORT_27017_TCP_PORT -u $MONGO_USER -p $MONGO_PASSWORD -d $MONGO_DB&quot;
+mongodump -h $MONGO_PORT_27017_TCP_ADDR -u $MONGO_USER -p $MONGO_PASSWORD -d $MONGO_DB
+tar -zcvf $FILE dump/
+rm -rf dump/
+echo &quot;Job finished: $(date)&quot;
+</code></pre>
+
+<p>start.sh</p>
+
+<pre><code>#!/bin/bash
+set -e
+CRON_SCHEDULE=${CRON_SCHEDULE:-0 1 * * *}
+if [[ &quot;$1&quot; == 'no-cron' ]]; then
+    exec /backup.sh
+else
+    LOGFIFO='/var/log/cron.fifo'
+    if [[ ! -e &quot;$LOGFIFO&quot; ]]; then
+        mkfifo &quot;$LOGFIFO&quot;
+    fi
+    CRON_ENV=&quot;MONGO_PORT_27017_TCP_ADDR='$MONGO_PORT_27017_TCP_ADDR'&quot;
+    CRON_ENV=&quot;$CRON_ENV\nMONGO_USER='$MONGO_USER'&quot;
+    CRON_ENV=&quot;$CRON_ENV\nMONGO_PASSWORD='$MONGO_PASSWORD'&quot;
+    CRON_ENV=&quot;$CRON_ENV\nMONGO_DB='$MONGO_DB'&quot;
+    echo -e &quot;$CRON_ENV\n$CRON_SCHEDULE /backup.sh &gt; $LOGFIFO 2&gt;&amp;1&quot; | crontab -
+    crontab -l
+    cron
+    tail -f &quot;$LOGFIFO&quot;
+fi
+</code></pre>
+
+<p>构建：</p>
+
+<pre><code>docker build -t carlding/mongobackup . 
+</code></pre>
+
+<p>运行：</p>
+
+<pre><code>docker run -d -v /root/mongo:/backup -e 'CRON_SCHEDULE=0 0 * * *' -e MONGO_PORT_27017_TCP_ADDR=remote.addr:27017 -e MONGO_USER=carlding -e MONGO_PASSWORD=carlding -e MONGO_DB=mongo  carlding/mongobackup 
+
+</code></pre>
+
+<p>如上为每天零点执行一次mongo备份，并且将备份文件以时间为名字保存在了 /root/mongo目录下</p>
+
+<p>立即备份：</p>
+
+<pre><code>docker run -d -v /root/mongo:/backup  -e MONGO_PORT_27017_TCP_ADDR=remote.addr:27017 -e MONGO_USER=carlding -e MONGO_PASSWORD=carlding -e MONGO_DB=mongo  carlding/mongobackup 
+
+</code></pre>
+
+    </div>
 
     <footer>
-        <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/" class="button big">Continue Reading</a></li>
-        </ul>
         <ul class="stats">
     
         
@@ -310,27 +500,47 @@
 
     
     
-        <li><a href='/categories/golang'>golang</a></li>
+        <li><a href='/categories/mongo'>mongo</a></li>
     
-        <li><a href='/categories/pointer'>pointer</a></li>
+        <li><a href='/categories/docker'>docker</a></li>
+    
+        <li><a href='/categories/dockerfile'>dockerfile</a></li>
     
 </ul>
 
     </footer>
 </article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="http://blog.qwding.com/post/beego_runmode/"
+                class="button big previous">beego 如何不同环境用不同的runmode</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
-    
 </ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'puppy';
+    var disqus_identifier = 'http:\/\/blog.qwding.com\/post\/mongo_backup\/';
+    var disqus_title = 'mongo 备份';
+    var disqus_url = 'http:\/\/blog.qwding.com\/post\/mongo_backup\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
 
     </div>
     
@@ -351,9 +561,6 @@
                 </header>
             
             <ul class="icons">
-                
-                    <li><a href="http://blog.qwding.com/categories/pointer/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
@@ -510,7 +717,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/mongo/">mongo</a>
+                                <a href="/categories/slice/">slice</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -528,7 +735,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/slice/">slice</a>
+                                <a href="/categories/mongo/">mongo</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -537,43 +744,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/benchmark/">benchmark</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/shell/">shell</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/pointer/">pointer</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/game/">game</a>
+                                <a href="/categories/evernote/">evernote</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -618,7 +789,25 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/evernote/">evernote</a>
+                                <a href="/categories/mysql/">mysql</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/registry/">registry</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hugo/">hugo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -654,7 +843,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/mysql/">mysql</a>
+                                <a href="/categories/benchmark/">benchmark</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -663,7 +852,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/registry/">registry</a>
+                                <a href="/categories/shell/">shell</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -672,7 +861,25 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hugo/">hugo</a>
+                                <a href="/categories/game/">game</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pointer/">pointer</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -697,9 +904,6 @@
     
         <section id="footer">
             <ul class="icons">
-                
-                    <li><a href="http://blog.qwding.com/categories/pointer/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     

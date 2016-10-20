@@ -13,7 +13,7 @@
 <html>
     <head>
         
-            <title>Pointer Posts - QWDing blog</title>
+            <title>Dockerfile Posts - QWDing blog</title>
         
 
         <meta charset="utf-8" />
@@ -30,13 +30,13 @@
         
 
         
-        <meta property="og:title" content="Pointer" />
+        <meta property="og:title" content="Dockerfile" />
 <meta property="og:description" content="懒癌晚期" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.qwding.com/categories/pointer/" />
+<meta property="og:url" content="http://blog.qwding.com/categories/dockerfile/" />
 
 
-<meta property="og:updated_time" content="2016-06-01T19:19:58&#43;08:00"/>
+<meta property="og:updated_time" content="2016-10-20T10:37:02&#43;08:00"/>
 
 
 
@@ -47,7 +47,7 @@
 
 
         
-<meta itemprop="name" content="Pointer">
+<meta itemprop="name" content="Dockerfile">
 <meta itemprop="description" content="懒癌晚期">
 
 
@@ -246,17 +246,17 @@
 
     
     <div id="main">
-        <h1>Pointer</h1>
+        <h1>Dockerfile</h1>
         
         
             <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/">golang: change instance address in his method</a></h2>
+            <h2><a href="http://blog.qwding.com/post/mongo_backup/">mongo 备份</a></h2>
         
         
-            <p>在实例方法内修改实例地址</p>
+            <p>mongo backup</p>
         
     </div>
     <div class="meta">
@@ -265,9 +265,9 @@
         
 
         <time class="published"
-            datetime='2016-06-01'>
-            June 1, 2016</time>
-        <span class="author"></span>
+            datetime='2016-10-20'>
+            October 20, 2016</time>
+        <span class="author">qwding</span>
         
             <p>1 minute read</p>
         
@@ -277,11 +277,11 @@
 
     
 
-    <p>前提回顾 对于结构体中的指针应用，大部分可能知道的是如下两代码的区别 func (a *AA) funcA() func (a AA) funcB() 区别在于，我们在funcA内修改a的值，是可以成功的，但是在funcB修改a的值是失败的。 因为funcA中的a是指针传递，funcB中的a是值传递。这个大家都知道。 今天话题 先上代码 package main import ( &quot;fmt&quot; ) type AA struct { xyz string opq string } func (this *AA) Change() { b := &amp;AA{xyz: &quot;xyz1&quot;, opq: &quot;opq1&quot;} this = b fmt.Println(&quot;in this:&quot;, this, &quot;addr:&quot;, &amp;this) } func main() { a := &amp;AA{xyz: &quot;xyz0&quot;, opq: &quot;opq0&quot;} fmt.Println(&quot;before a:&quot;, a, &quot;addr:&quot;, &amp;a) a.Change() fmt.Println(&quot;after a:&quot;, a, &quot;addr:&quot;, &amp;a) }</p>
+    <p>mongo 备份 秉承方便简单，易搭建原则，还是用docker来实现,镜像地址（<a href="https://hub.docker.com/r/carlding/mongobackup/）">https://hub.docker.com/r/carlding/mongobackup/）</a> docker hub找到一个镜像，istepanov/mongodump可以实现本地monogo的备份，查阅其内部脚本，并没有开放传入远程数据库的接口，于是在此基础上改进 Dockerfile FROM istepanov/mongodump ​MAINTAINER qwding ADD backup.sh backup.sh ADD start.sh start.sh backup.sh #!/bin/bash set -e echo &quot;Job started: $(date)&quot; DATE=$(date +%Y%m%d_%H%M%S) FILE=&quot;/backup/backup-$DATE.tar.gz&quot; echo &quot;mongodump -h $MONGO_PORT_27017_TCP_ADDR -p $MONGO_PORT_27017_TCP_PORT -u $MONGO_USER -p $MONGO_PASSWORD -d $MONGO_DB&quot; mongodump -h $MONGO_PORT_27017_TCP_ADDR -u $MONGO_USER -p $MONGO_PASSWORD -d $MONGO_DB tar -zcvf $FILE dump/ rm -rf dump/ echo &quot;Job finished: $(date)&quot; start.sh #!/bin/bash set -e CRON_SCHEDULE=${CRON_SCHEDULE:-0 1 * * *} if [[ &quot;$1&quot; == &lsquo;no-cron&rsquo; ]]; then exec /backup.sh else LOGFIFO=&lsquo;/var/log/cron.fifo&rsquo; if [[ !</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="http://blog.qwding.com/post/golang_struct_func_changeaddr/" class="button big">Continue Reading</a></li>
+            <li><a href="http://blog.qwding.com/post/mongo_backup/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -310,9 +310,11 @@
 
     
     
-        <li><a href='/categories/golang'>golang</a></li>
+        <li><a href='/categories/mongo'>mongo</a></li>
     
-        <li><a href='/categories/pointer'>pointer</a></li>
+        <li><a href='/categories/docker'>docker</a></li>
+    
+        <li><a href='/categories/dockerfile'>dockerfile</a></li>
     
 </ul>
 
@@ -352,7 +354,7 @@
             
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/pointer/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/dockerfile/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -537,96 +539,6 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/benchmark/">benchmark</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/shell/">shell</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/pointer/">pointer</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/game/">game</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/map/">map</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hexo/">hexo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/dockerfile/">dockerfile</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/beego/">beego</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/evernote/">evernote</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/youdao/">youdao</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -678,6 +590,96 @@
                         </article>
                     </li>
                 
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/benchmark/">benchmark</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pointer/">pointer</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/game/">game</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dockerfile/">dockerfile</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/beego/">beego</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/evernote/">evernote</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/map/">map</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
             </ul>
         </section>
     
@@ -698,7 +700,7 @@
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://blog.qwding.com/categories/pointer/index.xml" type="application/rss+xml"
+                    <li><a href="http://blog.qwding.com/categories/dockerfile/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

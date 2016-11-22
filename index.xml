@@ -6,8 +6,26 @@
     <description>Recent content on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2016 10:37:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Nov 2016 16:00:09 +0800</lastBuildDate>
     <atom:link href="http://blog.qwding.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>一场越看越有意思的骂战</title>
+      <link>http://blog.qwding.com/post/golang_intersting_1/</link>
+      <pubDate>Tue, 22 Nov 2016 16:00:09 +0800</pubDate>
+      
+      <guid>http://blog.qwding.com/post/golang_intersting_1/</guid>
+      <description>
+
+&lt;h3 id=&#34;有趣的帖子:b429b1d01dbad5b8b090552795c3b36e&#34;&gt;有趣的帖子&lt;/h3&gt;
+
+&lt;p&gt;查些资料，不小心挖了个坟，观战互喷 &lt;a href=&#34;https://www.v2ex.com/t/89374&#34;&gt;https://www.v2ex.com/t/89374&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;当然，看口水战的时候往往还是带了不少信息~&lt;/p&gt;
+
+&lt;p&gt;以此膜拜耿直程序员的耿直精神&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>mongo 备份</title>

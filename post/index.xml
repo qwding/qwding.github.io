@@ -6,8 +6,168 @@
     <description>Recent content in Posts on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Nov 2016 16:00:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Nov 2016 12:48:31 +0800</lastBuildDate>
     <atom:link href="http://blog.qwding.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>golang 几大主流框架对比</title>
+      <link>http://blog.qwding.com/post/golang_framwork_pk/</link>
+      <pubDate>Fri, 25 Nov 2016 12:48:31 +0800</pubDate>
+      
+      <guid>http://blog.qwding.com/post/golang_framwork_pk/</guid>
+      <description>
+
+&lt;h3 id=&#34;先上表格:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;先上表格&lt;/h3&gt;
+
+&lt;p&gt;如下表格是2016-11-24 日调研结果，2~5列为github数据。
+&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+
+&lt;p&gt;benchmark:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;beego-vs-revel-vs-martini-三大老框架:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;beego  VS revel VS martini 三大老框架&lt;/h3&gt;
+
+&lt;p&gt;beego&lt;/p&gt;
+
+&lt;p&gt;beego 很多人比较熟悉，国人写的，框架主要逻辑是经典MVC形式。&lt;/p&gt;
+
+&lt;p&gt;中间件：中间件可以写在beego内置的prepare方法里。&lt;/p&gt;
+
+&lt;p&gt;取参：取Query需要自己提取，url参数可以用内置方法。&lt;/p&gt;
+
+&lt;p&gt;返回：返回比较固定，想修改返回code比较麻烦。&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;p&gt;书写unit testing很恶心。&lt;/p&gt;
+
+&lt;p&gt;他的侵入式代码风格，还有源代码的多层嵌套，很多人都不太喜欢。&lt;/p&gt;
+
+&lt;p&gt;revel&lt;/p&gt;
+
+&lt;p&gt;revel 也是MVC框架，他的的形式是你在一个配置文件配置路由，当用revel工具执行revel run时候，将在项目目录下生产两个文件/tmp/main.go 和 /routs/routs.go .作用分别为注册路由和绑定路由内参数。&lt;/p&gt;
+
+&lt;p&gt;中间件：中间件可以定义在/init.go 里面。&lt;/p&gt;
+
+&lt;p&gt;取参：内置提供方法，并且有自己内置的validation方法，方便。&lt;/p&gt;
+
+&lt;p&gt;返回：提供多种返回方法。&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;p&gt;也是侵入式代码。&lt;/p&gt;
+
+&lt;p&gt;其他的未实际使用，不予评论&lt;/p&gt;
+
+&lt;p&gt;martini&lt;/p&gt;
+
+&lt;p&gt;书写简单，写起来和之后要讲的echo，gin很像，但是他的性能较echo和gin差了很多。&lt;/p&gt;
+
+&lt;p&gt;从功能上说，并且martini并不像beego和revel那样框架全面，需要自己把架子搭起来。&lt;/p&gt;
+
+&lt;p&gt;所以直接就不考虑了。&lt;/p&gt;
+
+&lt;p&gt;总结&lt;/p&gt;
+
+&lt;p&gt;性能上beego和revel两者不分伯仲，两者的侵入式代码也是为了节省更多的时间，带来了不少便利。对比起来更倾向于用revel做简单的web框架，他的取参和返回值带来的便利性更高一点，并且也会生成路由的testing方法，综合来讲下一次如果写简单的管理界面可能考虑使用revel。&lt;/p&gt;
+
+&lt;h3 id=&#34;fasthttp-vs-httprouter:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;fasthttp vs httpRouter&lt;/h3&gt;
+
+&lt;p&gt;两者都作为http的框架，可以替代原生的http，他们的优越都是因为速度快，0占用内存著称。可以考虑将他们作为其他框架的http引擎，会提升很大速度。&lt;/p&gt;
+
+&lt;h3 id=&#34;gorilla-mux:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;gorilla mux&lt;/h3&gt;
+
+&lt;p&gt;gorilla 最大好处是他出发点为组件化，各个模块单独成一体，你需要哪个模块，拿过来用就行，不需要可以换成其他写法。&lt;/p&gt;
+
+&lt;p&gt;mux是帮你对router更容易管理，其速度来说并不是非常突出。但是docker swarm用的是gorilla mux，足见其有一定可用性。&lt;/p&gt;
+
+&lt;p&gt;对于gorilla其他模块，如果缺少哪个模块组件，完全去任你挑选，安全稳定可靠，开发好帮手。&lt;/p&gt;
+
+&lt;h3 id=&#34;echo-vs-gin:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;echo VS gin&lt;/h3&gt;
+
+&lt;p&gt;最想说的两个&lt;/p&gt;
+
+&lt;p&gt;无论哪个benchmark，这两个框架的benchmark都已绝对优势排在前列，性能绝对认可。&lt;/p&gt;
+
+&lt;p&gt;代码书写上，两个框架写法也很相似，非常简洁，几行代码可勾勒一个http server,如下为gin一个ping serve，是不是超级简单。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+import &amp;quot;github.com/gin-gonic/gin&amp;quot;
+func main() {
+    r := gin.Default()
+    r.GET(&amp;quot;/ping&amp;quot;, func(c *gin.Context) {
+        c.JSON(200, gin.H{
+            &amp;quot;message&amp;quot;: &amp;quot;pong&amp;quot;,
+        })
+    })
+    r.Run() // listen and server on 0.0.0.0:8080
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;而echo的写法和gin及其相似，就不列举了。&lt;/p&gt;
+
+&lt;p&gt;功能全面来说，虽然简洁，但是功能也很全面，从路由分组，取参，中间件，返回考虑，都封装的使用很舒服。&lt;/p&gt;
+
+&lt;p&gt;其他特点：&lt;/p&gt;
+
+&lt;p&gt;echo：&lt;/p&gt;
+
+&lt;p&gt;可以将http引擎从 echo.standerd 和fasthttp间切换，两者的性能差不太多。&lt;/p&gt;
+
+&lt;p&gt;自带工具全面：websocket, http2, jwt授权等。&lt;/p&gt;
+
+&lt;p&gt;具有中文文档。&lt;/p&gt;
+
+&lt;p&gt;gin：&lt;/p&gt;
+
+&lt;p&gt;日志跟踪比echo更强大，也内置了返回html文件的方法，所以去写web server也会很简单。&lt;/p&gt;
+
+&lt;p&gt;综合来说&lt;/p&gt;
+
+&lt;p&gt;两者相差不太大，但是gin的日志跟踪还是更舒服一点。&lt;/p&gt;
+
+&lt;p&gt;在以后如果想写简单的API server，我会首选gin或echo来使用，更倾向gin,如果你不想看英文文档可以选择echo。其使用的简单太吸引人了。&lt;/p&gt;
+
+&lt;h3 id=&#34;goji-和-tango:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;goji 和 tango&lt;/h3&gt;
+
+&lt;p&gt;这两个是顺便看的，也有一些人推崇这两个，但是使用起来差别也并不是特别大&lt;/p&gt;
+
+&lt;p&gt;tango出发点是以结构体作为执行体的灵活框架，其他好像也并无特色了&lt;/p&gt;
+
+&lt;p&gt;goji貌似更成熟一点，可依赖程度更高&lt;/p&gt;
+
+&lt;h3 id=&#34;总结:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;萝卜白菜，各有所爱。粗略调研统计，跟上时代步伐。&lt;/p&gt;
+
+&lt;p&gt;总结就是如果写简单web server 会考虑 revel，写api server 会首先考虑gin。&lt;/p&gt;
+
+&lt;h3 id=&#34;福利一句话:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;福利一句话&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;上面的比较仅仅是路由的比较，但99%的瓶颈不在路由，而是模版的渲染和数据库操作。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;link:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;LINK&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;revel：&lt;a href=&#34;http://revel.github.io/docs/godoc/template.html&#34;&gt;http://revel.github.io/docs/godoc/template.html &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;revel中文： &lt;a href=&#34;http://gorevel.cn/docs/index.html&#34;&gt;http://gorevel.cn/docs/index.html &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;beego: &lt;a href=&#34;http://beego.me&#34;&gt;http://beego.me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;echo: &lt;a href=&#34;https://echo.labstack.com/guide&#34;&gt;https://echo.labstack.com/guide &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gin: &lt;a href=&#34;https://github.com/gin-gonic/gin&#34;&gt;https://github.com/gin-gonic/gin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;httpRouter: &lt;a href=&#34;https://github.com/julienschmidt/httprouter&#34;&gt;https://github.com/julienschmidt/httprouter &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gorilla: &lt;a href=&#34;http://www.gorillatoolkit.org/pkg/&#34;&gt;http://www.gorillatoolkit.org/pkg/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;tango: &lt;a href=&#34;http://gobook.io/read/github.com/go-tango/manual-zh-CN/&#34;&gt;http://gobook.io/read/github.com/go-tango/manual-zh-CN/ &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;benchmark:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/smallnest/go-web-framework-benchmark&#34;&gt;https://github.com/smallnest/go-web-framework-benchmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/&#34;&gt;http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/ &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>一场越看越有意思的骂战</title>

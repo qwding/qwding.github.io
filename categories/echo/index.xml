@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Beego on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/beego/</link>
-    <description>Recent content in Beego on QWDing blog</description>
+    <title>Echo on QWDing blog</title>
+    <link>http://blog.qwding.com/categories/echo/</link>
+    <description>Recent content in Echo on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Nov 2016 12:48:31 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/beego/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.qwding.com/categories/echo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>golang 几大主流框架对比</title>
@@ -166,57 +166,6 @@ func main() {
 &lt;li&gt;&lt;a href=&#34;https://github.com/smallnest/go-web-framework-benchmark&#34;&gt;https://github.com/smallnest/go-web-framework-benchmark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/&#34;&gt;http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/ &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>一场越看越有意思的骂战</title>
-      <link>http://blog.qwding.com/post/golang_intersting_1/</link>
-      <pubDate>Tue, 22 Nov 2016 16:00:09 +0800</pubDate>
-      
-      <guid>http://blog.qwding.com/post/golang_intersting_1/</guid>
-      <description>
-
-&lt;h3 id=&#34;有趣的帖子:b429b1d01dbad5b8b090552795c3b36e&#34;&gt;有趣的帖子&lt;/h3&gt;
-
-&lt;p&gt;查些资料，不小心挖了个坟，观战互喷 &lt;a href=&#34;https://www.v2ex.com/t/89374&#34;&gt;https://www.v2ex.com/t/89374&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，看口水战的时候往往还是带了不少信息~&lt;/p&gt;
-
-&lt;p&gt;以此膜拜耿直程序员的耿直精神&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>beego 如何不同环境用不同的runmode</title>
-      <link>http://blog.qwding.com/post/beego_runmode/</link>
-      <pubDate>Wed, 19 Oct 2016 10:28:28 +0800</pubDate>
-      
-      <guid>http://blog.qwding.com/post/beego_runmode/</guid>
-      <description>
-
-&lt;h3 id=&#34;beego-runmode修改:58592cb27ba0e83c8ed8827df86ec6a9&#34;&gt;beego runmode修改&lt;/h3&gt;
-
-&lt;p&gt;除了配置文件设置runmode，想切换环境时候需要手动改，太麻烦，而且容易忘&lt;/p&gt;
-
-&lt;p&gt;想通过如下两种方法尝试，均无效：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;flag，但是beego本身并没有flag，简直行不通&lt;/li&gt;
-&lt;li&gt;官方文档里个的方法是 beego.Runmode = &amp;ldquo;dev&amp;rdquo;, 但其实这个方法很鸡肋，很蛋疼，因为读配置文件早在程序运行前执行了，而如果再程序里修改runmode，你在init里用的参数必然还是默认写的，用着基本蛋疼。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;我在我本地beego 1.7的环境里又尝试了一下，发现已经没有这个方法了，可能作者也觉得确实蛋疼给删了吧。&lt;/p&gt;
-
-&lt;h3 id=&#34;环境变量改变:58592cb27ba0e83c8ed8827df86ec6a9&#34;&gt;环境变量改变&lt;/h3&gt;
-
-&lt;p&gt;尝试将配置文件的runmode指定为环境变量，然后指定具体模式。发现居然成功了。不管怎么样，确实这个办法还是一个不错的解决方案了&lt;/p&gt;
-
-&lt;h3 id=&#34;加上docker更好用:58592cb27ba0e83c8ed8827df86ec6a9&#34;&gt;加上docker更好用&lt;/h3&gt;
-
-&lt;p&gt;因为本来用docker，这样直接在Dockerfile里设置ENV，部署线上的时候，直接用构建好的镜像启动就ok了，什么都不用改了。&lt;/p&gt;
-
-&lt;p&gt;&lt;i&gt; 懒人使人进步&lt;/i&gt;&lt;/p&gt;
 </description>
     </item>
     

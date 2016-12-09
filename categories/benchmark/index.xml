@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Benchmark on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/benchmark/</link>
+    <link>http://qwding.github.io/categories/benchmark/</link>
     <description>Recent content in Benchmark on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Jun 2016 14:28:44 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/benchmark/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/benchmark/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>go map,slice,array 遍历性能测试 </title>
-      <link>http://blog.qwding.com/post/gotest_map_array_slice/</link>
+      <link>http://qwding.github.io/post/gotest_map_array_slice/</link>
       <pubDate>Mon, 27 Jun 2016 14:28:44 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/gotest_map_array_slice/</guid>
+      <guid>http://qwding.github.io/post/gotest_map_array_slice/</guid>
       <description>
 
 &lt;h1 id=&#34;就是随便试试:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#就是随便试试&lt;/h1&gt;

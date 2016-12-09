@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/golang/</link>
+    <link>http://qwding.github.io/categories/golang/</link>
     <description>Recent content in Golang on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Nov 2016 12:48:31 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>golang 几大主流框架对比</title>
-      <link>http://blog.qwding.com/post/golang_framwork_pk/</link>
+      <link>http://qwding.github.io/post/golang_framwork_pk/</link>
       <pubDate>Fri, 25 Nov 2016 12:48:31 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_framwork_pk/</guid>
+      <guid>http://qwding.github.io/post/golang_framwork_pk/</guid>
       <description>
 
 &lt;h3 id=&#34;先上表格:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;先上表格&lt;/h3&gt;
 
 &lt;p&gt;如下表格是2016-11-24 日调研结果，2~5列为github数据。
-&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;p&gt;benchmark:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;beego-vs-revel-vs-martini-三大老框架:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;beego  VS revel VS martini 三大老框架&lt;/h3&gt;
 
@@ -171,10 +171,10 @@ func main() {
     
     <item>
       <title>一场越看越有意思的骂战</title>
-      <link>http://blog.qwding.com/post/golang_intersting_1/</link>
+      <link>http://qwding.github.io/post/golang_intersting_1/</link>
       <pubDate>Tue, 22 Nov 2016 16:00:09 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_intersting_1/</guid>
+      <guid>http://qwding.github.io/post/golang_intersting_1/</guid>
       <description>
 
 &lt;h3 id=&#34;有趣的帖子:b429b1d01dbad5b8b090552795c3b36e&#34;&gt;有趣的帖子&lt;/h3&gt;
@@ -189,10 +189,10 @@ func main() {
     
     <item>
       <title>beego 如何不同环境用不同的runmode</title>
-      <link>http://blog.qwding.com/post/beego_runmode/</link>
+      <link>http://qwding.github.io/post/beego_runmode/</link>
       <pubDate>Wed, 19 Oct 2016 10:28:28 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/beego_runmode/</guid>
+      <guid>http://qwding.github.io/post/beego_runmode/</guid>
       <description>
 
 &lt;h3 id=&#34;beego-runmode修改:58592cb27ba0e83c8ed8827df86ec6a9&#34;&gt;beego runmode修改&lt;/h3&gt;
@@ -222,10 +222,10 @@ func main() {
     
     <item>
       <title>How golang slice Semi - pointer.</title>
-      <link>http://blog.qwding.com/post/slice_args/</link>
+      <link>http://qwding.github.io/post/slice_args/</link>
       <pubDate>Sun, 09 Oct 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/slice_args/</guid>
+      <guid>http://qwding.github.io/post/slice_args/</guid>
       <description>
 
 &lt;h3 id=&#34;起因:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;起因&lt;/h3&gt;
@@ -244,7 +244,7 @@ recursive([]int{}, 1, n, k, result)
 
 &lt;h1 id=&#34;先看下官方数组结构样子:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;先看下官方数组结构样子&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当然，一直知道数组是半指针，就是将数组的地址的值传进去。在函数里是改变不了指针的值，但是可以操作指针指向的数据，详细的google有很多&lt;/p&gt;
 
@@ -315,10 +315,10 @@ result: [0 1 2 3 4 5 6 7 8 9] addr: 0xc420012200
     
     <item>
       <title>go map,slice,array 遍历性能测试 </title>
-      <link>http://blog.qwding.com/post/gotest_map_array_slice/</link>
+      <link>http://qwding.github.io/post/gotest_map_array_slice/</link>
       <pubDate>Mon, 27 Jun 2016 14:28:44 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/gotest_map_array_slice/</guid>
+      <guid>http://qwding.github.io/post/gotest_map_array_slice/</guid>
       <description>
 
 &lt;h1 id=&#34;就是随便试试:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#就是随便试试&lt;/h1&gt;
@@ -453,10 +453,10 @@ ok  	command-line-arguments	14.858s
     
     <item>
       <title>golang: change instance address in his method</title>
-      <link>http://blog.qwding.com/post/golang_struct_func_changeaddr/</link>
+      <link>http://qwding.github.io/post/golang_struct_func_changeaddr/</link>
       <pubDate>Wed, 01 Jun 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_struct_func_changeaddr/</guid>
+      <guid>http://qwding.github.io/post/golang_struct_func_changeaddr/</guid>
       <description>
 
 &lt;h3 id=&#34;前提回顾:6a7dc0bc3a90f0304d120c855f7258c9&#34;&gt;前提回顾&lt;/h3&gt;
@@ -515,7 +515,7 @@ func main() {
 
 &lt;p&gt;结果图片如下&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;结果： &lt;code&gt;output1  == output3 != output2&lt;/code&gt;&lt;/p&gt;
 
@@ -531,7 +531,7 @@ func main() {
 
 &lt;p&gt;可以思考一下堆栈的分配。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;手拙，用excel画了个堆栈图&lt;/p&gt;
 

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pointer on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/pointer/</link>
+    <link>http://qwding.github.io/categories/pointer/</link>
     <description>Recent content in Pointer on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Jun 2016 19:19:58 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/pointer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/pointer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>golang: change instance address in his method</title>
-      <link>http://blog.qwding.com/post/golang_struct_func_changeaddr/</link>
+      <link>http://qwding.github.io/post/golang_struct_func_changeaddr/</link>
       <pubDate>Wed, 01 Jun 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_struct_func_changeaddr/</guid>
+      <guid>http://qwding.github.io/post/golang_struct_func_changeaddr/</guid>
       <description>
 
 &lt;h3 id=&#34;前提回顾:6a7dc0bc3a90f0304d120c855f7258c9&#34;&gt;前提回顾&lt;/h3&gt;
@@ -73,7 +73,7 @@ func main() {
 
 &lt;p&gt;结果图片如下&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;结果： &lt;code&gt;output1  == output3 != output2&lt;/code&gt;&lt;/p&gt;
 
@@ -89,7 +89,7 @@ func main() {
 
 &lt;p&gt;可以思考一下堆栈的分配。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;手拙，用excel画了个堆栈图&lt;/p&gt;
 

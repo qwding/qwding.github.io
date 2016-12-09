@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/hugo/</link>
+    <link>http://qwding.github.io/categories/hugo/</link>
     <description>Recent content in Hugo on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Apr 2016 18:51:19 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hugo vs hexo</title>
-      <link>http://blog.qwding.com/post/hugo_vs_hexo/</link>
+      <link>http://qwding.github.io/post/hugo_vs_hexo/</link>
       <pubDate>Fri, 08 Apr 2016 18:51:19 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/hugo_vs_hexo/</guid>
+      <guid>http://qwding.github.io/post/hugo_vs_hexo/</guid>
       <description>
 
 &lt;h3 id=&#34;hugo-和-hexo-对比:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;hugo 和 hexo 对比&lt;/h3&gt;

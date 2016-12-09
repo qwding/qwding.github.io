@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QWDing blog</title>
-    <link>http://blog.qwding.com/</link>
+    <link>http://qwding.github.io/</link>
     <description>Recent content on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Dec 2016 17:40:21 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>犬夜叉</title>
-      <link>http://blog.qwding.com/persional/Inuyasha/</link>
+      <link>http://qwding.github.io/persional/Inuyasha/</link>
       <pubDate>Fri, 09 Dec 2016 17:40:21 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/persional/Inuyasha/</guid>
+      <guid>http://qwding.github.io/persional/Inuyasha/</guid>
       <description>&lt;p&gt;其实写这个时候已经距离看犬夜叉一年多了，但是仍然记忆满满。不得不说，我仍然感觉犬夜叉是我看过动漫里最暖的一个。&lt;/p&gt;
 
 &lt;p&gt;生活中偶尔会看到各种犬夜叉的贴图、贴画，总是不禁让我回忆起那温暖的情节。&lt;/p&gt;
@@ -39,20 +39,20 @@
     
     <item>
       <title>golang 几大主流框架对比</title>
-      <link>http://blog.qwding.com/post/golang_framwork_pk/</link>
+      <link>http://qwding.github.io/post/golang_framwork_pk/</link>
       <pubDate>Fri, 25 Nov 2016 12:48:31 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_framwork_pk/</guid>
+      <guid>http://qwding.github.io/post/golang_framwork_pk/</guid>
       <description>
 
 &lt;h3 id=&#34;先上表格:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;先上表格&lt;/h3&gt;
 
 &lt;p&gt;如下表格是2016-11-24 日调研结果，2~5列为github数据。
-&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;p&gt;benchmark:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;beego-vs-revel-vs-martini-三大老框架:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;beego  VS revel VS martini 三大老框架&lt;/h3&gt;
 
@@ -199,10 +199,10 @@ func main() {
     
     <item>
       <title>一场越看越有意思的骂战</title>
-      <link>http://blog.qwding.com/post/golang_intersting_1/</link>
+      <link>http://qwding.github.io/post/golang_intersting_1/</link>
       <pubDate>Tue, 22 Nov 2016 16:00:09 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_intersting_1/</guid>
+      <guid>http://qwding.github.io/post/golang_intersting_1/</guid>
       <description>
 
 &lt;h3 id=&#34;有趣的帖子:b429b1d01dbad5b8b090552795c3b36e&#34;&gt;有趣的帖子&lt;/h3&gt;
@@ -217,10 +217,10 @@ func main() {
     
     <item>
       <title>mongo 备份</title>
-      <link>http://blog.qwding.com/post/mongo_backup/</link>
+      <link>http://qwding.github.io/post/mongo_backup/</link>
       <pubDate>Thu, 20 Oct 2016 10:37:02 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/mongo_backup/</guid>
+      <guid>http://qwding.github.io/post/mongo_backup/</guid>
       <description>
 
 &lt;h1 id=&#34;mongo-备份:dff5b3233884f61ae2c2815811350b4d&#34;&gt;mongo 备份&lt;/h1&gt;
@@ -299,10 +299,10 @@ fi
     
     <item>
       <title>beego 如何不同环境用不同的runmode</title>
-      <link>http://blog.qwding.com/post/beego_runmode/</link>
+      <link>http://qwding.github.io/post/beego_runmode/</link>
       <pubDate>Wed, 19 Oct 2016 10:28:28 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/beego_runmode/</guid>
+      <guid>http://qwding.github.io/post/beego_runmode/</guid>
       <description>
 
 &lt;h3 id=&#34;beego-runmode修改:58592cb27ba0e83c8ed8827df86ec6a9&#34;&gt;beego runmode修改&lt;/h3&gt;
@@ -332,10 +332,10 @@ fi
     
     <item>
       <title>How golang slice Semi - pointer.</title>
-      <link>http://blog.qwding.com/post/slice_args/</link>
+      <link>http://qwding.github.io/post/slice_args/</link>
       <pubDate>Sun, 09 Oct 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/slice_args/</guid>
+      <guid>http://qwding.github.io/post/slice_args/</guid>
       <description>
 
 &lt;h3 id=&#34;起因:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;起因&lt;/h3&gt;
@@ -354,7 +354,7 @@ recursive([]int{}, 1, n, k, result)
 
 &lt;h1 id=&#34;先看下官方数组结构样子:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;先看下官方数组结构样子&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当然，一直知道数组是半指针，就是将数组的地址的值传进去。在函数里是改变不了指针的值，但是可以操作指针指向的数据，详细的google有很多&lt;/p&gt;
 
@@ -425,10 +425,10 @@ result: [0 1 2 3 4 5 6 7 8 9] addr: 0xc420012200
     
     <item>
       <title>Docker容器里获取宿主机用户</title>
-      <link>http://blog.qwding.com/post/get_host_user_in_container/</link>
+      <link>http://qwding.github.io/post/get_host_user_in_container/</link>
       <pubDate>Mon, 29 Aug 2016 15:08:37 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/get_host_user_in_container/</guid>
+      <guid>http://qwding.github.io/post/get_host_user_in_container/</guid>
       <description>
 
 &lt;h1 id=&#34;尝试方法:cd3c2658114a3f3f4bebfbdac284dca6&#34;&gt;尝试方法&lt;/h1&gt;
@@ -460,10 +460,10 @@ $/ echo $HOSTUSER
     
     <item>
       <title>Evernote vs youdao</title>
-      <link>http://blog.qwding.com/post/evernote_vs_youdao/</link>
+      <link>http://qwding.github.io/post/evernote_vs_youdao/</link>
       <pubDate>Sun, 28 Aug 2016 23:53:36 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/evernote_vs_youdao/</guid>
+      <guid>http://qwding.github.io/post/evernote_vs_youdao/</guid>
       <description>
 
 &lt;h1 id=&#34;evernote:0a0af4fe2c0cfa5f7823691e7b97c81a&#34;&gt;Evernote&lt;/h1&gt;
@@ -514,10 +514,10 @@ $/ echo $HOSTUSER
     
     <item>
       <title>go map,slice,array 遍历性能测试 </title>
-      <link>http://blog.qwding.com/post/gotest_map_array_slice/</link>
+      <link>http://qwding.github.io/post/gotest_map_array_slice/</link>
       <pubDate>Mon, 27 Jun 2016 14:28:44 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/gotest_map_array_slice/</guid>
+      <guid>http://qwding.github.io/post/gotest_map_array_slice/</guid>
       <description>
 
 &lt;h1 id=&#34;就是随便试试:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#就是随便试试&lt;/h1&gt;
@@ -652,10 +652,10 @@ ok  	command-line-arguments	14.858s
     
     <item>
       <title>shell execute mongo/mysql which start by docker.</title>
-      <link>http://blog.qwding.com/post/shell_exec_db/</link>
+      <link>http://qwding.github.io/post/shell_exec_db/</link>
       <pubDate>Tue, 07 Jun 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/shell_exec_db/</guid>
+      <guid>http://qwding.github.io/post/shell_exec_db/</guid>
       <description>
 
 &lt;h1 id=&#34;问题初衷:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;#问题初衷&lt;/h1&gt;
@@ -727,10 +727,10 @@ EOF
     
     <item>
       <title>golang: change instance address in his method</title>
-      <link>http://blog.qwding.com/post/golang_struct_func_changeaddr/</link>
+      <link>http://qwding.github.io/post/golang_struct_func_changeaddr/</link>
       <pubDate>Wed, 01 Jun 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_struct_func_changeaddr/</guid>
+      <guid>http://qwding.github.io/post/golang_struct_func_changeaddr/</guid>
       <description>
 
 &lt;h3 id=&#34;前提回顾:6a7dc0bc3a90f0304d120c855f7258c9&#34;&gt;前提回顾&lt;/h3&gt;
@@ -789,7 +789,7 @@ func main() {
 
 &lt;p&gt;结果图片如下&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;结果： &lt;code&gt;output1  == output3 != output2&lt;/code&gt;&lt;/p&gt;
 
@@ -805,7 +805,7 @@ func main() {
 
 &lt;p&gt;可以思考一下堆栈的分配。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/chang_addr_pic1.png&#34; alt=&#34; &#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;手拙，用excel画了个堆栈图&lt;/p&gt;
 
@@ -818,10 +818,10 @@ func main() {
     
     <item>
       <title>Install portus by docker and configration read.</title>
-      <link>http://blog.qwding.com/post/portus/</link>
+      <link>http://qwding.github.io/post/portus/</link>
       <pubDate>Wed, 20 Apr 2016 11:48:19 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/portus/</guid>
+      <guid>http://qwding.github.io/post/portus/</guid>
       <description>
 
 &lt;h3 id=&#34;一般形式:95f2626a8b71aea78c26d5a625e37de7&#34;&gt;一般形式&lt;/h3&gt;
@@ -965,10 +965,10 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
     
     <item>
       <title>温暖的木屋</title>
-      <link>http://blog.qwding.com/relax/warm_house/</link>
+      <link>http://qwding.github.io/relax/warm_house/</link>
       <pubDate>Thu, 14 Apr 2016 18:18:02 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/relax/warm_house/</guid>
+      <guid>http://qwding.github.io/relax/warm_house/</guid>
       <description>&lt;p&gt;在v2ex上发现了一个小游戏，据说专门写代码时候在后台挂着的，于是也玩了一下。根本停不下来。&lt;/p&gt;
 
 &lt;p&gt;链接：&lt;a href=&#34;http://g.miaowu.asia/index.php&#34;&gt;http://g.miaowu.asia/index.php&lt;/a&gt;&lt;/p&gt;
@@ -997,10 +997,10 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
     
     <item>
       <title>hugo vs hexo</title>
-      <link>http://blog.qwding.com/post/hugo_vs_hexo/</link>
+      <link>http://qwding.github.io/post/hugo_vs_hexo/</link>
       <pubDate>Fri, 08 Apr 2016 18:51:19 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/hugo_vs_hexo/</guid>
+      <guid>http://qwding.github.io/post/hugo_vs_hexo/</guid>
       <description>
 
 &lt;h3 id=&#34;hugo-和-hexo-对比:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;hugo 和 hexo 对比&lt;/h3&gt;
@@ -1051,10 +1051,10 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
     
     <item>
       <title>矫情</title>
-      <link>http://blog.qwding.com/persional/main/</link>
+      <link>http://qwding.github.io/persional/main/</link>
       <pubDate>Fri, 08 Apr 2016 12:06:31 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/persional/main/</guid>
+      <guid>http://qwding.github.io/persional/main/</guid>
       <description>
 
 &lt;h3 id=&#34;贱人就是矫情:379caad01b6ea305187be199bcac1370&#34;&gt;贱人就是矫情&lt;/h3&gt;

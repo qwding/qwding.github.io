@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Slice on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/slice/</link>
+    <link>http://qwding.github.io/categories/slice/</link>
     <description>Recent content in Slice on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 09 Oct 2016 19:19:58 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/slice/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/slice/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How golang slice Semi - pointer.</title>
-      <link>http://blog.qwding.com/post/slice_args/</link>
+      <link>http://qwding.github.io/post/slice_args/</link>
       <pubDate>Sun, 09 Oct 2016 19:19:58 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/slice_args/</guid>
+      <guid>http://qwding.github.io/post/slice_args/</guid>
       <description>
 
 &lt;h3 id=&#34;起因:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;起因&lt;/h3&gt;
@@ -33,7 +33,7 @@ recursive([]int{}, 1, n, k, result)
 
 &lt;h1 id=&#34;先看下官方数组结构样子:ea699c56ae54e9a4b6e2bc03dae237ca&#34;&gt;先看下官方数组结构样子&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/slice.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当然，一直知道数组是半指针，就是将数组的地址的值传进去。在函数里是改变不了指针的值，但是可以操作指针指向的数据，详细的google有很多&lt;/p&gt;
 
@@ -104,10 +104,10 @@ result: [0 1 2 3 4 5 6 7 8 9] addr: 0xc420012200
     
     <item>
       <title>go map,slice,array 遍历性能测试 </title>
-      <link>http://blog.qwding.com/post/gotest_map_array_slice/</link>
+      <link>http://qwding.github.io/post/gotest_map_array_slice/</link>
       <pubDate>Mon, 27 Jun 2016 14:28:44 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/gotest_map_array_slice/</guid>
+      <guid>http://qwding.github.io/post/gotest_map_array_slice/</guid>
       <description>
 
 &lt;h1 id=&#34;就是随便试试:b5fc0eddaa47014462e79df04e2285e5&#34;&gt;#就是随便试试&lt;/h1&gt;

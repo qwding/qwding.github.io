@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Registry on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/registry/</link>
+    <link>http://qwding.github.io/categories/registry/</link>
     <description>Recent content in Registry on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Apr 2016 11:48:19 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/registry/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/registry/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Install portus by docker and configration read.</title>
-      <link>http://blog.qwding.com/post/portus/</link>
+      <link>http://qwding.github.io/post/portus/</link>
       <pubDate>Wed, 20 Apr 2016 11:48:19 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/portus/</guid>
+      <guid>http://qwding.github.io/post/portus/</guid>
       <description>
 
 &lt;h3 id=&#34;一般形式:95f2626a8b71aea78c26d5a625e37de7&#34;&gt;一般形式&lt;/h3&gt;

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Revel on QWDing blog</title>
-    <link>http://blog.qwding.com/categories/revel/</link>
+    <link>http://qwding.github.io/categories/revel/</link>
     <description>Recent content in Revel on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Nov 2016 12:48:31 +0800</lastBuildDate>
-    <atom:link href="http://blog.qwding.com/categories/revel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://qwding.github.io/categories/revel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>golang 几大主流框架对比</title>
-      <link>http://blog.qwding.com/post/golang_framwork_pk/</link>
+      <link>http://qwding.github.io/post/golang_framwork_pk/</link>
       <pubDate>Fri, 25 Nov 2016 12:48:31 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_framwork_pk/</guid>
+      <guid>http://qwding.github.io/post/golang_framwork_pk/</guid>
       <description>
 
 &lt;h3 id=&#34;先上表格:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;先上表格&lt;/h3&gt;
 
 &lt;p&gt;如下表格是2016-11-24 日调研结果，2~5列为github数据。
-&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_pk.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;p&gt;benchmark:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.qwding.com/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://qwding.github.io/img/golang_framwork_benchmark.png&#34; width = &#34;800&#34; alt=&#34;图片名称&#34; align=center /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;beego-vs-revel-vs-martini-三大老框架:96ab2966d9ab7b0ab7940f829d386302&#34;&gt;beego  VS revel VS martini 三大老框架&lt;/h3&gt;
 
@@ -171,10 +171,10 @@ func main() {
     
     <item>
       <title>一场越看越有意思的骂战</title>
-      <link>http://blog.qwding.com/post/golang_intersting_1/</link>
+      <link>http://qwding.github.io/post/golang_intersting_1/</link>
       <pubDate>Tue, 22 Nov 2016 16:00:09 +0800</pubDate>
       
-      <guid>http://blog.qwding.com/post/golang_intersting_1/</guid>
+      <guid>http://qwding.github.io/post/golang_intersting_1/</guid>
       <description>
 
 &lt;h3 id=&#34;有趣的帖子:b429b1d01dbad5b8b090552795c3b36e&#34;&gt;有趣的帖子&lt;/h3&gt;

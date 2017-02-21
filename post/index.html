@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://qwding.github.io/post/" />
 
 
-<meta property="og:updated_time" content="2016-11-25T12:48:31&#43;08:00"/>
+<meta property="og:updated_time" content="2017-02-21T15:05:28&#43;08:00"/>
 
 
 
@@ -228,11 +228,11 @@
 
                 
                     <li>
-                        <a href="http://qwding.github.io/persional/Inuyasha/"><p>犬夜叉</p></a>
+                        <a href="http://qwding.github.io/post/root_permissiion_deny/"><p>使用root用户时候出现权限不够</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://qwding.github.io/post/golang_framwork_pk/"><p>golang 几大主流框架对比</p></a>
+                        <a href="http://qwding.github.io/persional/Inuyasha/"><p>犬夜叉</p></a>
                     </li>
                 
             </ul>
@@ -245,6 +245,80 @@
     
     <div id="main">
         
+          
+          <h2>2017</h2>
+          
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://qwding.github.io/post/root_permissiion_deny/">使用root用户时候出现权限不够</a></h2>
+        
+        
+            <p>permission denied when use user root.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-02-21'>
+            February 21, 2017</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>非常费解的问题 写了一个logrotate的脚本，用crontab定时跑，非常费解的问题出现了，我单独跑logrotate怎么跑都没问题，但是放到crontab里就会出现权限不够的问题。其中就有使用curl权限不够，百思不得其姐！ 有没有搞错，我是root用户啊，还出现权限不够的问题。 试过了将curl权限提到最高，赋给s权限，均失败。 google查阅curl permission denied / crontab permission denied / logrotate permission denied 均无果。 吐血。。。 过程 查阅系统日志（centos） cat /var/log/messages |grep curl Feb 21 14:52:01 client kernel: type=1400 audit(1487659921.234:2409): avc: denied { name_connect } for pid=26860 comm=&quot;curl&quot; dest=2727 scontext=system_u:system_r:logrotate_t:s0-s0:c0.c1023 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket 什么鬼，看不懂，仔细查阅一下，查到SELinux。 我去，这不是之前搞mysql常遇到的问题么 修改 /etc/selinux/config SELINUX=disabled # 设置为disabled 测试crontab好使了! SELinux 这个是什么美国国家安全局，增加安全控制的东西 这个设置了enforcing时候，你的root用户其实也没毛多大用了，也是受限制的。 总之就是不让你动你运行程序以外的文件 纠错过程 很曲折，一直以为是crontab运行时候用户的问题，或者文件的权限问题，在root下还是报错，所以一直卡在那里。 最后能找到问题也是花费好多时间&hellip;&hellip; 好烦</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://qwding.github.io/post/root_permissiion_deny/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/linux'>linux</a></li>
+    
+        <li><a href='/categories/permission'>permission</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
           
           <h2>2016</h2>
           
@@ -1288,13 +1362,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://qwding.github.io/persional/Inuyasha/">犬夜叉</a></h3>
+                                <h3><a href="http://qwding.github.io/post/root_permissiion_deny/">使用root用户时候出现权限不够</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-09'>
-                                    December 9, 2016</time>
+                                    '2017-02-21'>
+                                    February 21, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1302,13 +1376,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://qwding.github.io/post/golang_framwork_pk/">golang 几大主流框架对比</a></h3>
+                                <h3><a href="http://qwding.github.io/persional/Inuyasha/">犬夜叉</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-11-25'>
-                                    November 25, 2016</time>
+                                    '2016-12-09'>
+                                    December 9, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -1373,6 +1447,24 @@
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/mongo/">mongo</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/live/">live</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/revel/">revel</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1391,52 +1483,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/live/">live</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mongo/">mongo</a>
-                                <span style="float:right;">2</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/testing/">testing</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mysql/">mysql</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/pointer/">pointer</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
+                                <a href="/categories/evernote/">evernote</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1454,7 +1501,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/map/">map</a>
+                                <a href="/categories/testing/">testing</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1463,7 +1510,34 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hexo/">hexo</a>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/portus/">portus</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/game/">game</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/linux/">linux</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1481,16 +1555,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/evernote/">evernote</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/array/">array</a>
+                                <a href="/categories/benchmark/">benchmark</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1508,7 +1573,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/game/">game</a>
+                                <a href="/categories/hugo/">hugo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1535,7 +1600,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
+                                <a href="/categories/map/">map</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1544,7 +1609,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hugo/">hugo</a>
+                                <a href="/categories/pointer/">pointer</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1553,7 +1618,34 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/benchmark/">benchmark</a>
+                                <a href="/categories/permission/">permission</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/array/">array</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mysql/">mysql</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hexo/">hexo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

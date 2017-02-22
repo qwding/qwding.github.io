@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://qwding.github.io/post/" />
 
 
-<meta property="og:updated_time" content="2016-10-20T10:37:02&#43;08:00"/>
+<meta property="og:updated_time" content="2016-11-22T16:00:09&#43;08:00"/>
 
 
 
@@ -228,11 +228,11 @@
 
                 
                     <li>
-                        <a href="http://qwding.github.io/post/root_permissiion_deny/"><p>使用root用户时候出现权限不够</p></a>
+                        <a href="http://qwding.github.io/post/ldconf/"><p>ldconfig</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://qwding.github.io/persional/Inuyasha/"><p>犬夜叉</p></a>
+                        <a href="http://qwding.github.io/post/root_permissiion_deny/"><p>使用root用户时候出现权限不够</p></a>
                     </li>
                 
             </ul>
@@ -248,6 +248,73 @@
           
           <h2>2017</h2>
           
+             <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://qwding.github.io/post/ldconf/">ldconfig</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-02-22'>
+            February 22, 2017</time>
+        <span class="author">qwding</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>事情起因 最近接了个C++项目，结果编译完放到服务器上会报动态库版本不对，之后又是一个系统库不对，我粗暴的将CentOS 7(之前不知道系统是7&hellip;不然打死也不这么干啊) 的/lib64/libc.so.6 直接拷贝到了CentOS 6.5系统上，灾难发生了&hellip;. 所有命令用不了，傻逼了&hellip; 恰好那个服务器正跑着一个pv 几百万的项目，顿时压力山大 绝大部分命令都用不了，ls 命令都用不了了，本想将软链换回去，ln 不好使，怎么办！ 后来查阅到命令ldconfig，专门管理动态库的，发现这个命令可以运行诶（哭笑脸）。 在查阅其参数，发现只有一个-l貌似可以用到，可是大部分博客都是这么写的： -l Manually link individual libraries. 并没有看到列子（哭笑脸） 抱着死马当活马医的心态试用如下 ldconfig -l /lib64/libc.so.6 /lib64/libc-2.12.so 居然好使了，福大命大！ 后来检查发现，貌似这个命令只是临时更改软链，想永久改还是需要修改文件的。 ldconfig 主要还是管理linux的动态链接库的，安装动态链接库以后，需要将库目录放到 /etc/ld.so.conf 里面，再执行ldconfig，这时候会将库的信息放到 /etc/ld.so.cache（高速缓存机制）。 系统在使用库时候先去 /etc/ld.so.cache 目录下找，找到了再去 /etc/ld.so.conf 目录下找。所以如果 /etc/ld.so.cache 没有，那就找不到。到这里也就明白了，新加库，就要执行ldconfig，但是更新的话就不需要了 linux博大精深 不搞不知道，最近新接的别人的项目，发现写C的还是对底层能更是了解很多啊！linux很多东西用C写起来更能发挥效果啊。</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://qwding.github.io/post/ldconf/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-tags">&nbsp;</i>
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/linux'>linux</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+            
              <article class="post">
     <header>
     <div class="title">
@@ -1363,13 +1430,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://qwding.github.io/post/root_permissiion_deny/">使用root用户时候出现权限不够</a></h3>
+                                <h3><a href="http://qwding.github.io/post/ldconf/">ldconfig</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-02-21'>
-                                    February 21, 2017</time>
+                                    '2017-02-22'>
+                                    February 22, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1377,13 +1444,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://qwding.github.io/persional/Inuyasha/">犬夜叉</a></h3>
+                                <h3><a href="http://qwding.github.io/post/root_permissiion_deny/">使用root用户时候出现权限不够</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-12-09'>
-                                    December 9, 2016</time>
+                                    '2017-02-21'>
+                                    February 21, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -1448,6 +1515,15 @@
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/slice/">slice</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/mongo/">mongo</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1457,7 +1533,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/live/">live</a>
+                                <a href="/categories/linux/">linux</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -1475,7 +1551,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/slice/">slice</a>
+                                <a href="/categories/live/">live</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -1484,88 +1560,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/echo/">echo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/bin/">bin</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/map/">map</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/pointer/">pointer</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/permission/">permission</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/array/">array</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/mysql/">mysql</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/hexo/">hexo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/portus/">portus</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/game/">game</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1592,7 +1587,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/testing/">testing</a>
+                                <a href="/categories/pointer/">pointer</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1601,7 +1596,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
+                                <a href="/categories/portus/">portus</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1610,16 +1605,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hugo/">hugo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/linux/">linux</a>
+                                <a href="/categories/game/">game</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1637,7 +1623,16 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/benchmark/">benchmark</a>
+                                <a href="/categories/testing/">testing</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/mysql/">mysql</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1647,6 +1642,78 @@
                         <article>
                             <header>
                                 <a href="/categories/registry/">registry</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hugo/">hugo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/permission/">permission</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/echo/">echo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/array/">array</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/benchmark/">benchmark</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/shell/">shell</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bin/">bin</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/map/">map</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

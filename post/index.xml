@@ -6,8 +6,40 @@
     <description>Recent content in Posts on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2017 18:11:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Apr 2017 19:43:29 +0800</lastBuildDate>
     <atom:link href="http://qwding.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>docker golang 今天遇到的坑 吐槽</title>
+      <link>http://qwding.github.io/post/4_24_keng/</link>
+      <pubDate>Mon, 24 Apr 2017 19:43:29 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/post/4_24_keng/</guid>
+      <description>
+
+&lt;h1 id=&#34;过程是这样的:3d134ffadfa460621f0e6e5b974fab00&#34;&gt;过程是这样的&lt;/h1&gt;
+
+&lt;p&gt;因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。&lt;/p&gt;
+
+&lt;p&gt;首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。&lt;/p&gt;
+
+&lt;p&gt;然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&amp;hellip; 跟docker启动device map有关&amp;hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧&lt;/p&gt;
+
+&lt;p&gt;返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。&lt;/p&gt;
+
+&lt;p&gt;我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&amp;hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。&lt;/p&gt;
+
+&lt;p&gt;到目前为止，感觉是两种环境，两个错误。日了狗一样&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。&lt;/p&gt;
+
+&lt;p&gt;查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&amp;hellip;. 好吧。下1.8吧。 官网&amp;hellip; 没有&amp;hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&amp;hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。&lt;/p&gt;
+
+&lt;p&gt;然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;仅以此文吐槽下，居然忙了一下午&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ldconfig</title>
@@ -38,6 +70,8 @@
 后来检查发现，貌似这个命令只是临时更改软链，想永久改还是需要修改文件的。&lt;/p&gt;
 
 &lt;h3 id=&#34;ldconfig:41d79fbd6af245a7aa6bb03b7d578a78&#34;&gt;ldconfig&lt;/h3&gt;
+
+&lt;p&gt;写的感觉不错的链接：&lt;a href=&#34;http://blog.csdn.net/unix21/article/details/12119861&#34;&gt;http://blog.csdn.net/unix21/article/details/12119861&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;主要还是管理linux的动态链接库的，安装动态链接库以后，需要将库目录放到 /etc/ld.so.conf 里面，再执行ldconfig，这时候会将库的信息放到  /etc/ld.so.cache（高速缓存机制）。 系统在使用库时候先去 /etc/ld.so.cache 目录下找，找到了再去 /etc/ld.so.conf 目录下找。所以如果  /etc/ld.so.cache 没有，那就找不到。到这里也就明白了，新加库，就要执行ldconfig，但是更新的话就不需要了&lt;/p&gt;
 
@@ -1077,20 +1111,6 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
 &lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/omnibus/docker/&#34;&gt;gitlab-ee docker安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/ee/pages/README.html&#34;&gt;gitlab pages使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>一个开始</title>
-      <link>http://qwding.github.io/post/main/</link>
-      <pubDate>Fri, 08 Apr 2016 11:57:57 +0800</pubDate>
-      
-      <guid>http://qwding.github.io/post/main/</guid>
-      <description>
-
-&lt;h3 id=&#34;写点博客总是好的:379caad01b6ea305187be199bcac1370&#34;&gt;写点博客总是好的&lt;/h3&gt;
-
-&lt;p&gt;长点心，写点博客，少打游戏。&lt;/p&gt;
 </description>
     </item>
     

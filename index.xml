@@ -6,8 +6,40 @@
     <description>Recent content on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2017 18:11:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Apr 2017 19:43:29 +0800</lastBuildDate>
     <atom:link href="http://qwding.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>docker golang 今天遇到的坑 吐槽</title>
+      <link>http://qwding.github.io/post/4_24_keng/</link>
+      <pubDate>Mon, 24 Apr 2017 19:43:29 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/post/4_24_keng/</guid>
+      <description>
+
+&lt;h1 id=&#34;过程是这样的:3d134ffadfa460621f0e6e5b974fab00&#34;&gt;过程是这样的&lt;/h1&gt;
+
+&lt;p&gt;因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。&lt;/p&gt;
+
+&lt;p&gt;首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。&lt;/p&gt;
+
+&lt;p&gt;然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&amp;hellip; 跟docker启动device map有关&amp;hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧&lt;/p&gt;
+
+&lt;p&gt;返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。&lt;/p&gt;
+
+&lt;p&gt;我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&amp;hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。&lt;/p&gt;
+
+&lt;p&gt;到目前为止，感觉是两种环境，两个错误。日了狗一样&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。&lt;/p&gt;
+
+&lt;p&gt;查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&amp;hellip;. 好吧。下1.8吧。 官网&amp;hellip; 没有&amp;hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&amp;hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。&lt;/p&gt;
+
+&lt;p&gt;然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;仅以此文吐槽下，居然忙了一下午&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ldconfig</title>
@@ -38,6 +70,8 @@
 后来检查发现，貌似这个命令只是临时更改软链，想永久改还是需要修改文件的。&lt;/p&gt;
 
 &lt;h3 id=&#34;ldconfig:41d79fbd6af245a7aa6bb03b7d578a78&#34;&gt;ldconfig&lt;/h3&gt;
+
+&lt;p&gt;写的感觉不错的链接：&lt;a href=&#34;http://blog.csdn.net/unix21/article/details/12119861&#34;&gt;http://blog.csdn.net/unix21/article/details/12119861&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;主要还是管理linux的动态链接库的，安装动态链接库以后，需要将库目录放到 /etc/ld.so.conf 里面，再执行ldconfig，这时候会将库的信息放到  /etc/ld.so.cache（高速缓存机制）。 系统在使用库时候先去 /etc/ld.so.cache 目录下找，找到了再去 /etc/ld.so.conf 目录下找。所以如果  /etc/ld.so.cache 没有，那就找不到。到这里也就明白了，新加库，就要执行ldconfig，但是更新的话就不需要了&lt;/p&gt;
 
@@ -1051,38 +1085,6 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
 
 &lt;li&gt;&lt;p&gt;没有api，如果不想直接操作web来创建用户等，就需要自己写方法去操作数据库了。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>温暖的木屋</title>
-      <link>http://qwding.github.io/relax/warm_house/</link>
-      <pubDate>Thu, 14 Apr 2016 18:18:02 +0800</pubDate>
-      
-      <guid>http://qwding.github.io/relax/warm_house/</guid>
-      <description>&lt;p&gt;在v2ex上发现了一个小游戏，据说专门写代码时候在后台挂着的，于是也玩了一下。根本停不下来。&lt;/p&gt;
-
-&lt;p&gt;链接：&lt;a href=&#34;http://g.miaowu.asia/index.php&#34;&gt;http://g.miaowu.asia/index.php&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;直接在线自动存档了。&lt;/p&gt;
-
-&lt;p&gt;讲的大概就是从一个小黑屋发展成大村庄的故事，最后走向了外太空~~~&lt;/p&gt;
-
-&lt;p&gt;整个游戏概述：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;就是一直挂机，收集资源，有了资源可以发展，发展到一定程度，出现新资源，可以提升自己的战斗力。&lt;/li&gt;
-&lt;li&gt;之后买得起罗盘就可以开始探索，探索时候要注意携带的水量和腊肉量，一旦任意耗光，就死掉了，回家继续发展。&lt;/li&gt;
-&lt;li&gt;探索途中会遇到野怪，控制好血量不要死掉就行，装备的话武器一样带一个就行。剩下都是腊肉都无所谓了。探索洞穴需要火把，带3个足够了。&lt;/li&gt;
-&lt;li&gt;一定控制好资源够回家的水和肉。&lt;/li&gt;
-&lt;li&gt;探索到一定程度就可以上天了。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;虽说是挂机游戏，但是探索时候真心还是不挂机&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;而且这是好几年前的游戏了，有开源代码。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;祝玩的愉快~&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

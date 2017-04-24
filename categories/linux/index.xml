@@ -39,6 +39,8 @@
 
 &lt;h3 id=&#34;ldconfig:41d79fbd6af245a7aa6bb03b7d578a78&#34;&gt;ldconfig&lt;/h3&gt;
 
+&lt;p&gt;写的感觉不错的链接：&lt;a href=&#34;http://blog.csdn.net/unix21/article/details/12119861&#34;&gt;http://blog.csdn.net/unix21/article/details/12119861&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;主要还是管理linux的动态链接库的，安装动态链接库以后，需要将库目录放到 /etc/ld.so.conf 里面，再执行ldconfig，这时候会将库的信息放到  /etc/ld.so.cache（高速缓存机制）。 系统在使用库时候先去 /etc/ld.so.cache 目录下找，找到了再去 /etc/ld.so.conf 目录下找。所以如果  /etc/ld.so.cache 没有，那就找不到。到这里也就明白了，新加库，就要执行ldconfig，但是更新的话就不需要了&lt;/p&gt;
 
 &lt;h3 id=&#34;linux博大精深:41d79fbd6af245a7aa6bb03b7d578a78&#34;&gt;linux博大精深&lt;/h3&gt;

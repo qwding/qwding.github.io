@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>golang 几大主流框架对比</title>
+                <title>docker golang 今天遇到的坑 吐槽</title>
             
         
 
@@ -18,7 +18,9 @@
             <meta name="author" content="qwding">
         
         
-            <meta name="description" content="contrast of golang framworks">
+            
+                <meta name="description" content="懒癌晚期">
+            
         
 
         
@@ -27,18 +29,18 @@
 
 
 
-<meta name="twitter:title" content="golang 几大主流框架对比"/>
-<meta name="twitter:description" content="contrast of golang framworks"/>
+<meta name="twitter:title" content="docker golang 今天遇到的坑 吐槽"/>
+<meta name="twitter:description" content="过程是这样的 因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。 首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。 然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&hellip; 跟docker启动device map有关&hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧 返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。 我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。 到目前为止，感觉是两种环境，两个错误。日了狗一样&hellip; 最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。 查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&hellip;. 好吧。下1.8吧。 官网&hellip; 没有&hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。 然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&hellip; 仅以此文吐槽下，居然忙了一下午"/>
 
 
 
-        <meta property="og:title" content="golang 几大主流框架对比" />
-<meta property="og:description" content="contrast of golang framworks" />
+        <meta property="og:title" content="docker golang 今天遇到的坑 吐槽" />
+<meta property="og:description" content="过程是这样的 因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。 首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。 然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&hellip; 跟docker启动device map有关&hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧 返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。 我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。 到目前为止，感觉是两种环境，两个错误。日了狗一样&hellip; 最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。 查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&hellip;. 好吧。下1.8吧。 官网&hellip; 没有&hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。 然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&hellip; 仅以此文吐槽下，居然忙了一下午" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://qwding.github.io/post/golang_framwork_pk/" />
+<meta property="og:url" content="http://qwding.github.io/post/4_24_keng/" />
 
 
-<meta property="og:updated_time" content="2016-11-25T12:48:31&#43;08:00"/>
+<meta property="og:updated_time" content="2017-04-24T19:43:29&#43;08:00"/>
 
 
 
@@ -50,12 +52,12 @@
 
 
         
-<meta itemprop="name" content="golang 几大主流框架对比">
-<meta itemprop="description" content="contrast of golang framworks">
+<meta itemprop="name" content="docker golang 今天遇到的坑 吐槽">
+<meta itemprop="description" content="过程是这样的 因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。 首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。 然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&hellip; 跟docker启动device map有关&hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧 返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。 我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。 到目前为止，感觉是两种环境，两个错误。日了狗一样&hellip; 最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。 查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&hellip;. 好吧。下1.8吧。 官网&hellip; 没有&hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。 然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&hellip; 仅以此文吐槽下，居然忙了一下午">
 
 
-<meta itemprop="dateModified" content="2016-11-25T12:48:31&#43;08:00" />
-<meta itemprop="wordCount" content="141">
+<meta itemprop="dateModified" content="2017-04-24T19:43:29&#43;08:00" />
+<meta itemprop="wordCount" content="33">
 
 
 
@@ -268,43 +270,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&text=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&text=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -321,11 +323,9 @@
     <header>
     <div class="title">
         
-            <h1><a href="http://qwding.github.io/post/golang_framwork_pk/">golang 几大主流框架对比</a></h1>
+            <h1><a href="http://qwding.github.io/post/4_24_keng/">docker golang 今天遇到的坑 吐槽</a></h1>
             
         
-        
-            <p>contrast of golang framworks</p>
         
     </div>
     <div class="meta">
@@ -334,8 +334,8 @@
         
 
         <time class="published"
-            datetime='2016-11-25'>
-            November 25, 2016</time>
+            datetime='2017-04-24'>
+            April 24, 2017</time>
         <span class="author">qwding</span>
         
             <p>1 minute read</p>
@@ -350,43 +350,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&text=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&text=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f&title=golang%20%e5%87%a0%e5%a4%a7%e4%b8%bb%e6%b5%81%e6%a1%86%e6%9e%b6%e5%af%b9%e6%af%94" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f&title=docker%20golang%20%e4%bb%8a%e5%a4%a9%e9%81%87%e5%88%b0%e7%9a%84%e5%9d%91%20%e5%90%90%e6%a7%bd" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fqwding.github.io%2fpost%2fgolang_framwork_pk%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by qwding&body=http%3a%2f%2fqwding.github.io%2fpost%2f4_24_keng%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -398,155 +398,27 @@
     <div id="content">
         
 
-<h3 id="先上表格:96ab2966d9ab7b0ab7940f829d386302">先上表格</h3>
+<h1 id="过程是这样的:3d134ffadfa460621f0e6e5b974fab00">过程是这样的</h1>
 
-<p>如下表格是2016-11-24 日调研结果，2~5列为github数据。
-<img src="/img/golang_framwork_pk.png" width = "800" alt="图片名称" align=center /></p>
+<p>因需求，写了一个小小的golang项目，但是在打包docker封装时候遇到了很奇怪的问题。</p>
 
-<p>benchmark:</p>
+<p>首先是我在linux编译好的程序，想打进alpine镜像（在我本地mac电脑做），发现打进去之后运行不了程序，报/bin/bash : binary not found . google一下，有说版本的，也有说别的的，但是关键是，这个镜像当时打包其他golang binary都没有问题。</p>
 
-<p><img src="/img/golang_framwork_benchmark.png" width = "800" alt="图片名称" align=center /></p>
+<p>然后我在我编译那台机尝试打包镜像，pull一个alpine镜像。bug&hellip; 跟docker启动device map有关&hellip;. 为了不影响其他应用，忍了把，我不用这个机器了行吧</p>
 
-<h3 id="beego-vs-revel-vs-martini-三大老框架:96ab2966d9ab7b0ab7940f829d386302">beego  VS revel VS martini 三大老框架</h3>
+<p>返回用mac，无意间发现。。。我用mac交叉编译的程序，打到镜像里，居然可以跑，差异加惊喜。不管原因了，能跑就行。</p>
 
-<p>beego</p>
+<p>我写的项目里用到了golang1.8的新功能plugin。跑那个模块时候居然报错，plugin：not implement. 懵逼ing&hellip; 之前跑都没有问题，为啥交叉编译以后再容器里那个模块就失效了！还报这个错。</p>
 
-<p>beego 很多人比较熟悉，国人写的，框架主要逻辑是经典MVC形式。</p>
+<p>到目前为止，感觉是两种环境，两个错误。日了狗一样&hellip;</p>
 
-<p>中间件：中间件可以写在beego内置的prepare方法里。</p>
+<p>最起码交叉编译那种有错误可查，翻了google没有人报这个错误啊！是没有这个错误。懵逼。。。</p>
 
-<p>取参：取Query需要自己提取，url参数可以用内置方法。</p>
+<p>查源码吧。。。进到plugin目录，很开心看到只有3个文件，很开心看到文件都很短。什么？ 很短？阅读以下。 这TM就结束了？逻辑呢？ google一下。原来plugin因为bug这个版本取消了。用1.8beta可以用&hellip;. 好吧。下1.8吧。 官网&hellip; 没有&hellip; 没有beta版本。。。去golangtc.com下载吧。 我去&hellip; 超级慢，慢可以忍，最重要的是，下到一半，用chrome下载会挺掉，直接结束了有木有。好的，那我们就找个服务器curl吧，也跟拉便便一样慢，放那里慢慢下去吧。</p>
 
-<p>返回：返回比较固定，想修改返回code比较麻烦。</p>
+<p>然后非常不爽的我还换了几个alpine版本，均失败。后来我妥协了，下了一个ubuntu。麻蛋，一下就好使了，我好无语&hellip;</p>
 
-<p>缺点：</p>
-
-<p>书写unit testing很恶心。</p>
-
-<p>他的侵入式代码风格，还有源代码的多层嵌套，很多人都不太喜欢。</p>
-
-<p>revel</p>
-
-<p>revel 也是MVC框架，他的的形式是你在一个配置文件配置路由，当用revel工具执行revel run时候，将在项目目录下生产两个文件/tmp/main.go 和 /routs/routs.go .作用分别为注册路由和绑定路由内参数。</p>
-
-<p>中间件：中间件可以定义在/init.go 里面。</p>
-
-<p>取参：内置提供方法，并且有自己内置的validation方法，方便。</p>
-
-<p>返回：提供多种返回方法。</p>
-
-<p>缺点：</p>
-
-<p>也是侵入式代码。</p>
-
-<p>其他的未实际使用，不予评论</p>
-
-<p>martini</p>
-
-<p>书写简单，写起来和之后要讲的echo，gin很像，但是他的性能较echo和gin差了很多。</p>
-
-<p>从功能上说，并且martini并不像beego和revel那样框架全面，需要自己把架子搭起来。</p>
-
-<p>所以直接就不考虑了。</p>
-
-<p>总结</p>
-
-<p>性能上beego和revel两者不分伯仲，两者的侵入式代码也是为了节省更多的时间，带来了不少便利。对比起来更倾向于用revel做简单的web框架，他的取参和返回值带来的便利性更高一点，并且也会生成路由的testing方法，综合来讲下一次如果写简单的管理界面可能考虑使用revel。</p>
-
-<h3 id="fasthttp-vs-httprouter:96ab2966d9ab7b0ab7940f829d386302">fasthttp vs httpRouter</h3>
-
-<p>两者都作为http的框架，可以替代原生的http，他们的优越都是因为速度快，0占用内存著称。可以考虑将他们作为其他框架的http引擎，会提升很大速度。</p>
-
-<h3 id="gorilla-mux:96ab2966d9ab7b0ab7940f829d386302">gorilla mux</h3>
-
-<p>gorilla 最大好处是他出发点为组件化，各个模块单独成一体，你需要哪个模块，拿过来用就行，不需要可以换成其他写法。</p>
-
-<p>mux是帮你对router更容易管理，其速度来说并不是非常突出。但是docker swarm用的是gorilla mux，足见其有一定可用性。</p>
-
-<p>对于gorilla其他模块，如果缺少哪个模块组件，完全去任你挑选，安全稳定可靠，开发好帮手。</p>
-
-<h3 id="echo-vs-gin:96ab2966d9ab7b0ab7940f829d386302">echo VS gin</h3>
-
-<p>最想说的两个</p>
-
-<p>无论哪个benchmark，这两个框架的benchmark都已绝对优势排在前列，性能绝对认可。</p>
-
-<p>代码书写上，两个框架写法也很相似，非常简洁，几行代码可勾勒一个http server,如下为gin一个ping serve，是不是超级简单。</p>
-
-<pre><code>package main
-import &quot;github.com/gin-gonic/gin&quot;
-func main() {
-    r := gin.Default()
-    r.GET(&quot;/ping&quot;, func(c *gin.Context) {
-        c.JSON(200, gin.H{
-            &quot;message&quot;: &quot;pong&quot;,
-        })
-    })
-    r.Run() // listen and server on 0.0.0.0:8080
-}
-</code></pre>
-
-<p>而echo的写法和gin及其相似，就不列举了。</p>
-
-<p>功能全面来说，虽然简洁，但是功能也很全面，从路由分组，取参，中间件，返回考虑，都封装的使用很舒服。</p>
-
-<p>其他特点：</p>
-
-<p>echo：</p>
-
-<p>可以将http引擎从 echo.standerd 和fasthttp间切换，两者的性能差不太多。</p>
-
-<p>自带工具全面：websocket, http2, jwt授权等。</p>
-
-<p>具有中文文档。</p>
-
-<p>gin：</p>
-
-<p>日志跟踪比echo更强大，也内置了返回html文件的方法，所以去写web server也会很简单。</p>
-
-<p>综合来说</p>
-
-<p>两者相差不太大，但是gin的日志跟踪还是更舒服一点。</p>
-
-<p>在以后如果想写简单的API server，我会首选gin或echo来使用，更倾向gin,如果你不想看英文文档可以选择echo。其使用的简单太吸引人了。</p>
-
-<h3 id="goji-和-tango:96ab2966d9ab7b0ab7940f829d386302">goji 和 tango</h3>
-
-<p>这两个是顺便看的，也有一些人推崇这两个，但是使用起来差别也并不是特别大</p>
-
-<p>tango出发点是以结构体作为执行体的灵活框架，其他好像也并无特色了</p>
-
-<p>goji貌似更成熟一点，可依赖程度更高</p>
-
-<h3 id="总结:96ab2966d9ab7b0ab7940f829d386302">总结</h3>
-
-<p>萝卜白菜，各有所爱。粗略调研统计，跟上时代步伐。</p>
-
-<p>总结就是如果写简单web server 会考虑 revel，写api server 会首先考虑gin。</p>
-
-<h3 id="福利一句话:96ab2966d9ab7b0ab7940f829d386302">福利一句话</h3>
-
-<p><strong>上面的比较仅仅是路由的比较，但99%的瓶颈不在路由，而是模版的渲染和数据库操作。</strong></p>
-
-<h3 id="link:96ab2966d9ab7b0ab7940f829d386302">LINK</h3>
-
-<ul>
-<li>revel：<a href="http://revel.github.io/docs/godoc/template.html">http://revel.github.io/docs/godoc/template.html </a></li>
-<li>revel中文： <a href="http://gorevel.cn/docs/index.html">http://gorevel.cn/docs/index.html </a></li>
-<li>beego: <a href="http://beego.me">http://beego.me</a></li>
-<li>echo: <a href="https://echo.labstack.com/guide">https://echo.labstack.com/guide </a></li>
-<li>gin: <a href="https://github.com/gin-gonic/gin">https://github.com/gin-gonic/gin</a></li>
-<li>httpRouter: <a href="https://github.com/julienschmidt/httprouter">https://github.com/julienschmidt/httprouter </a></li>
-<li>gorilla: <a href="http://www.gorillatoolkit.org/pkg/">http://www.gorillatoolkit.org/pkg/</a></li>
-<li>tango: <a href="http://gobook.io/read/github.com/go-tango/manual-zh-CN/">http://gobook.io/read/github.com/go-tango/manual-zh-CN/ </a></li>
-</ul>
-
-<p>benchmark:</p>
-
-<ul>
-<li><a href="https://github.com/smallnest/go-web-framework-benchmark">https://github.com/smallnest/go-web-framework-benchmark</a></li>
-<li><a href="http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/">http://colobu.com/2016/03/23/Go-HTTP-request-router-and-web-framework-benchmark/ </a></li>
-</ul>
+<p>仅以此文吐槽下，居然忙了一下午</p>
 
     </div>
 
@@ -569,7 +441,7 @@ func main() {
                     
 
                     
-                        Categories
+                        Category
                     
                 
             </li>
@@ -578,15 +450,7 @@ func main() {
 
     
     
-        <li><a href='/categories/golang'>golang</a></li>
-    
-        <li><a href='/categories/beego'>beego</a></li>
-    
-        <li><a href='/categories/revel'>revel</a></li>
-    
-        <li><a href='/categories/echo'>echo</a></li>
-    
-        <li><a href='/categories/bin'>bin</a></li>
+        <li><a href='/categories/keng'>keng</a></li>
     
 </ul>
 
@@ -594,13 +458,10 @@ func main() {
 </article>
 <ul class="actions pagination">
     
-        <li><a href="http://qwding.github.io/post/golang_intersting_1/"
-                class="button big previous">一场越看越有意思的骂战</a></li>
+        <li><a href="http://qwding.github.io/post/ldconf/"
+                class="button big previous">ldconfig</a></li>
     
 
-    
-        <li><a href="http://qwding.github.io/post/root_permissiion_deny/"
-                class="button big next">使用root用户时候出现权限不够</a></li>
     
 </ul>
 
@@ -611,9 +472,9 @@ func main() {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'puppy';
-    var disqus_identifier = 'http:\/\/qwding.github.io\/post\/golang_framwork_pk\/';
-    var disqus_title = 'golang 几大主流框架对比';
-    var disqus_url = 'http:\/\/qwding.github.io\/post\/golang_framwork_pk\/';
+    var disqus_identifier = 'http:\/\/qwding.github.io\/post\/4_24_keng\/';
+    var disqus_title = 'docker golang 今天遇到的坑 吐槽';
+    var disqus_url = 'http:\/\/qwding.github.io\/post\/4_24_keng\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -811,7 +672,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/live/">live</a>
+                                <a href="/categories/revel/">revel</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -820,7 +681,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/revel/">revel</a>
+                                <a href="/categories/live/">live</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -856,6 +717,24 @@ func main() {
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/hugo/">hugo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/testing/">testing</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/bin/">bin</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -866,6 +745,15 @@ func main() {
                         <article>
                             <header>
                                 <a href="/categories/pointer/">pointer</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/youdao/">youdao</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -901,7 +789,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/youdao/">youdao</a>
+                                <a href="/categories/game/">game</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -910,7 +798,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/game/">game</a>
+                                <a href="/categories/shell/">shell</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -937,24 +825,6 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/shell/">shell</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/echo/">echo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/evernote/">evernote</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -973,7 +843,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/dockerfile/">dockerfile</a>
+                                <a href="/categories/echo/">echo</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1009,16 +879,7 @@ func main() {
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/testing/">testing</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hugo/">hugo</a>
+                                <a href="/categories/dockerfile/">dockerfile</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

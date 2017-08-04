@@ -6,8 +6,89 @@
     <description>Recent content in Posts on QWDing blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Apr 2017 19:43:29 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Aug 2017 14:33:08 +0800</lastBuildDate>
     <atom:link href="http://qwding.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Waiting a new job</title>
+      <link>http://qwding.github.io/post/find_job/</link>
+      <pubDate>Fri, 04 Aug 2017 14:33:08 +0800</pubDate>
+      
+      <guid>http://qwding.github.io/post/find_job/</guid>
+      <description>
+
+&lt;h1 id=&#34;公司快黄了-开始找工作:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;公司快黄了，开始找工作&lt;/h1&gt;
+
+&lt;p&gt;在7月末，8月初，本来也并不是找工作的黄金时期来找工作，也是因为公司快黄了，该走了。&lt;/p&gt;
+
+&lt;p&gt;等出去面试后感觉，并不是很少人在跳槽，有的公司的资历老点的人整天都在面试，工作都要加班到后半夜，感觉也是不容易。&lt;/p&gt;
+
+&lt;h1 id=&#34;聊聊hr的坑:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;聊聊HR的坑&lt;/h1&gt;
+
+&lt;p&gt;天真的我，以为实话实说并没有什么问题。于是在第一周的时候，hr会问，你为什么从前两家离职，我说上一家创业公司内部矛盾比较多，上下层有点脱节。&lt;/p&gt;
+
+&lt;p&gt;可谓是说了老东家的坏话，这TMD，只能说：我是傻逼！&lt;/p&gt;
+
+&lt;p&gt;说老东家坏话简直是一大禁忌，在周末的某个忧虑的晚上，突然深深感受到自己的傻逼，于是在接下来的面试，我都是说公司搬家，上班太远等等为借口了，效果还不错，感觉和hr应该没有聊的什么太大问题。&lt;/p&gt;
+
+&lt;h1 id=&#34;技术短板:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;技术短板&lt;/h1&gt;
+
+&lt;p&gt;其实面试的每家公司，基本都可以面到最后一面，但是给offer的寥寥，为什么？！&lt;/p&gt;
+
+&lt;p&gt;总结了一下无非几点&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;没有大公司经验，其实我并不认为去大公司怎么怎么好，相反可能了解的会更窄；但是这时候发现，却是必不可少的，很多公司更注重你之前的环境，大公司那种内涵吧，亦或许是 “这家伙已经过了大公司的面试，应该还是挺牛逼的”。&lt;/li&gt;
+&lt;li&gt;没有高并发和分布式经验。高并发指的啥，有几个公司可以说自己的量集很大是高并发，并且碰到很难解决的问题呢。即使是像抢购手机这样的高并发量，其实了解背后，也都是很简单粗暴的方式解决，并没有说你通过牛逼的代码就可以解决。但是人家就是要看你有没有这个经验。&lt;/li&gt;
+&lt;li&gt;数据库需求，有几个大厂，貌似对数据库要求比较高，像我这种可能没有真做过读写分离，数据库量级没有那么高，被问到一些mysql的尖酸问题，直接gg。&lt;/li&gt;
+&lt;li&gt;钱要的有点过，人家并不着急要人，这才是根本原因&amp;hellip;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;这些年到底做了什么:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;这些年到底做了什么&lt;/h1&gt;
+
+&lt;p&gt;看到上面几点，感觉这几年工作到底做了啥，是不是天天上班晃悠了&lt;/p&gt;
+
+&lt;p&gt;有点心酸，谁乐意晃悠到现在感觉找工作又很尴尬呢。找工作真的是一件很看运气的事，在现在公司我工做也是很认真，但是真正的工作内容可能并不适合我现在要找的方向，并不适合。&lt;/p&gt;
+
+&lt;p&gt;也许我在这里一直在擦屁股或者去擦屁股的路上（戴维营欢迎你 2333）。&lt;/p&gt;
+
+&lt;h1 id=&#34;说一说碰到的主要问题吧:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;说一说碰到的主要问题吧&lt;/h1&gt;
+
+&lt;h3 id=&#34;golang:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;golang&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;gc实现，主要是三色标记过程&lt;/li&gt;
+&lt;li&gt;slice，map实现原理&lt;/li&gt;
+&lt;li&gt;golang的锁应用&lt;/li&gt;
+&lt;li&gt;chan的应用，sync.waitGroup，select 的timeout导致cpu激增。&lt;/li&gt;
+&lt;li&gt;var tmp interface{} = nil;  tmp == nil 返回值（答案是false)&lt;/li&gt;
+&lt;li&gt;怎么优化gc停顿时间&lt;/li&gt;
+&lt;li&gt;pprof怎么调优&lt;/li&gt;
+&lt;li&gt;阅读过哪些golang写的源码： k8s，docker，beego等&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实遇到golang的问题，我一般还是都可以应对自如的，基本没啥问题&lt;/p&gt;
+
+&lt;h3 id=&#34;几个值得学习的问题:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;几个值得学习的问题&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;系统设计，比如说有个活动，设计一套系统：匹配对手，出石头剪子布，胜者可抽奖。设计这么套系统。
+主要注意的点： 匹配对手，比赛出拳，抽奖，奖池。最主要考察的是，这是一个分布式高并发的系统。&lt;/li&gt;
+&lt;li&gt;算法，这个不用多说了，多刷题吧，一般不会太难，把递归搞通了可以处理大部分面试的难度。&lt;/li&gt;
+&lt;li&gt;linux 命令，一般awk，ss -s，sed等等吧，但是sed我是真用的不多，碰到gg。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;弄得好不如白话的好:b16d4ecb05493851fce54dc3060a3d5e&#34;&gt;弄得好不如白话的好&lt;/h1&gt;
+
+&lt;p&gt;即使不是你做的，你可以白话成你做的&lt;/p&gt;
+
+&lt;p&gt;即使不牛逼，也可以白话的很牛逼&lt;/p&gt;
+
+&lt;p&gt;即使问题并不难，但是也可以白话好解决问题过程&lt;/p&gt;
+
+&lt;p&gt;其实面试还是一个心理挑战，你把面试官忽悠明白，让他认为你行就可以，而能力是其次的，你做事情的能力不如你白话的能力。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>docker golang 今天遇到的坑 吐槽</title>
@@ -1057,60 +1138,6 @@ issue地址：&lt;a href=&#34;https://github.com/docker/docker-registry/issues/2
 
 &lt;li&gt;&lt;p&gt;没有api，如果不想直接操作web来创建用户等，就需要自己写方法去操作数据库了。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>hugo vs hexo</title>
-      <link>http://qwding.github.io/post/hugo_vs_hexo/</link>
-      <pubDate>Fri, 08 Apr 2016 18:51:19 +0800</pubDate>
-      
-      <guid>http://qwding.github.io/post/hugo_vs_hexo/</guid>
-      <description>
-
-&lt;h3 id=&#34;hugo-和-hexo-对比:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;hugo 和 hexo 对比&lt;/h3&gt;
-
-&lt;p&gt;主要是查阅了一下很多人经验，并汇总了一下对比结果&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;                     hexo                           hugo
-速度                  快                           特别快
-主题           几大主题基础上延伸,总量更多     很多,良好主题生态圈
-安装及更新       更新容易有坑，因为依赖包       一个binary,安装更新快
-评论系统           支持disqus等                   支持disqus等
-应用方面          博客适应性更强	             非博客适应性更强
-文档              有中文文档                    文档超详细，中文不全
-功能            分类,tag,多语言,i18n       分类,tag,series,wight,多语言
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;因为本身更喜欢golang，所以选择了hugo&lt;/p&gt;
-
-&lt;h3 id=&#34;分享一下查阅的资料:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;分享一下查阅的资料&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://beebom.com/2015/04/best-static-site-generators&#34;&gt;十种静态页面生成工具&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;hexo 文档&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://hexo.io/zh-cn/docs/&#34;&gt;hexo 中文文档&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.jianshu.com/p/465830080ea9&#34;&gt;hexo 一篇比较好的使用文章&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.gohugo.io/overview/quickstart/&#34;&gt;hugo 文档&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.gohugo.org/doc&#34;&gt;hugo 中文文档&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;hugo 主题&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;gitlab-pages:f5f80bcd59ef9d4f36dd6010f161a624&#34;&gt;gitlab pages&lt;/h3&gt;
-
-&lt;p&gt;gitlab 8.3以后也出了github pages的功能，但只限gitlab-ee版本，需要付费&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/omnibus/docker/&#34;&gt;gitlab-ee docker安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://doc.gitlab.com/ee/pages/README.html&#34;&gt;gitlab pages使用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

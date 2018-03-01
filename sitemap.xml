@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://qwding.github.io/</loc>
+    <loc>http://qwding.github.io/post/vim_python_ycm/</loc>
+    <lastmod>2018-03-01T10:28:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/vim_golang/</loc>
+    <lastmod>2018-02-12T10:28:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/vim_config/</loc>
+    <lastmod>2018-01-24T10:28:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/web_game/</loc>
     <lastmod>2017-08-15T16:20:37+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -14,6 +29,11 @@
   
   <url>
     <loc>http://qwding.github.io/persional/ti7/</loc>
+    <lastmod>2017-08-04T15:55:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/ti7/</loc>
     <lastmod>2017-08-04T15:55:14+08:00</lastmod>
   </url>
   
@@ -38,7 +58,12 @@
   </url>
   
   <url>
-    <loc>http://qwding.github.io/persional/Inuyasha/</loc>
+    <loc>http://qwding.github.io/persional/inuyasha/</loc>
+    <lastmod>2016-12-09T17:40:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/inuyasha/</loc>
     <lastmod>2016-12-09T17:40:21+08:00</lastmod>
   </url>
   
@@ -98,6 +123,11 @@
   </url>
   
   <url>
+    <loc>http://qwding.github.io/post/warm_house/</loc>
+    <lastmod>2016-04-14T18:18:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qwding.github.io/relax/warm_house/</loc>
     <lastmod>2016-04-14T18:18:02+08:00</lastmod>
   </url>
@@ -120,6 +150,221 @@
   <url>
     <loc>http://qwding.github.io/about/</loc>
     <lastmod>2016-04-01T18:18:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/array/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/beego/</loc>
+    <lastmod>2016-11-25T12:48:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/benchmark/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/bin/</loc>
+    <lastmod>2016-11-25T12:48:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/docker/</loc>
+    <lastmod>2016-10-20T10:37:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/dockerfile/</loc>
+    <lastmod>2016-10-20T10:37:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/dota/</loc>
+    <lastmod>2017-08-04T15:55:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/echo/</loc>
+    <lastmod>2016-11-25T12:48:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/evernote/</loc>
+    <lastmod>2016-08-28T23:53:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/game/</loc>
+    <lastmod>2017-08-15T16:20:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/golang/</loc>
+    <lastmod>2018-02-12T10:28:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/hexo/</loc>
+    <lastmod>2016-04-08T18:51:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/hugo/</loc>
+    <lastmod>2016-04-08T18:51:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/job/</loc>
+    <lastmod>2017-08-04T14:33:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/keng/</loc>
+    <lastmod>2017-04-24T19:43:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/linux/</loc>
+    <lastmod>2017-02-22T18:11:04+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/live/</loc>
+    <lastmod>2016-04-08T12:06:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/map/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/mongo/</loc>
+    <lastmod>2016-10-20T10:37:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/mysql/</loc>
+    <lastmod>2016-06-07T19:19:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/permission/</loc>
+    <lastmod>2017-02-21T15:05:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/persional/</loc>
+    <lastmod>2017-08-04T15:55:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/pointer/</loc>
+    <lastmod>2016-06-01T19:19:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/portus/</loc>
+    <lastmod>2016-04-20T11:48:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/post/</loc>
+    <lastmod>2018-03-01T10:28:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/</loc>
+    <lastmod>2018-03-01T10:28:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/registry/</loc>
+    <lastmod>2016-04-20T11:48:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/relax/</loc>
+    <lastmod>2017-08-15T16:20:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/revel/</loc>
+    <lastmod>2016-11-25T12:48:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/shell/</loc>
+    <lastmod>2016-06-07T19:19:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/slice/</loc>
+    <lastmod>2016-10-09T19:19:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/testing/</loc>
+    <lastmod>2016-06-27T14:28:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/vim/</loc>
+    <lastmod>2018-03-01T10:28:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qwding.github.io/categories/youdao/</loc>
+    <lastmod>2016-08-28T23:53:36+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

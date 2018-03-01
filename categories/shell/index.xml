@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2016 19:19:58 +0800</lastBuildDate>
-    <atom:link href="http://qwding.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://qwding.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>shell execute mongo/mysql which start by docker.</title>
@@ -15,73 +17,12 @@
       <pubDate>Tue, 07 Jun 2016 19:19:58 +0800</pubDate>
       
       <guid>http://qwding.github.io/post/shell_exec_db/</guid>
-      <description>
-
-&lt;h1 id=&#34;问题初衷:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;#问题初衷&lt;/h1&gt;
-
-&lt;p&gt;打算一键部署带权限验证的mongo。但是docker hub官方镜像创建mongo步骤为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker run --name mongodb -d -p 27017:27017 mongo:3.3 --auth
-docker exec -it mongodb mongo admin
-db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;打算将其做成脚本&lt;/p&gt;
-
-&lt;h1 id=&#34;用shell实现:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;#用shell实现&lt;/h1&gt;
-
-&lt;p&gt;经过查阅，发现shell的 &amp;lt;&amp;lt;EOF 可以实现，查阅资料 &lt;a href=&#34;http://my.oschina.net/u/1032146/blog/146941&#34;&gt;http://my.oschina.net/u/1032146/blog/146941&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;应该可以实现,于是写了脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-mongo admin &amp;lt;&amp;lt; EOF
-db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] });
-exit;
-EOF
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在mongo 启动的容器内执行脚本，成功！&lt;/p&gt;
-
-&lt;h1 id=&#34;直接写脚本启动容器-error:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;#直接写脚本启动容器(error)&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;!/bin/bash
-docker run --name mongodb -d -p 27017:27017 dhub.yunpro.cn/cloud/mongo:3.3 --auth
-sleep 1
-docker exec -it mongodb mongo admin &amp;lt;&amp;lt; EOF
-db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] });
-exit;
-EOF
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sleep 1秒是保证mongo起来后才执行exec。&lt;/p&gt;
-
-&lt;p&gt;但是会报错 &lt;code&gt;cannot enable tty mode on non tty input&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;为什么报错呢？容器内运行却没问题&lt;/p&gt;
-
-&lt;p&gt;一开始认为是不是docker exec 后面接命令执行 &amp;lt;&amp;lt; EOF 识别不了？想了想不是这么回事&lt;/p&gt;
-
-&lt;p&gt;后来仔细思考了报错，只不过说不能启动一个伪终端，我又想到docker的 i 和 t 参数分别表示输入和伪终端，是不是根本就不需要伪终端啊，于是将 t 参数去掉&lt;/p&gt;
-
-&lt;p&gt;执行成功！&lt;/p&gt;
-
-&lt;h1 id=&#34;总结:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;#总结&lt;/h1&gt;
-
-&lt;p&gt;对shell并不熟悉，也不太深入了解伪终端，但是像这种启动mongo的方法，也类似于启动mysql，执行mysql句子类似，还是应了解每个参数作用&lt;/p&gt;
-
-&lt;h1 id=&#34;附上改后脚本-ok:610a470999a7c01b18f8ed67eb2b53eb&#34;&gt;附上改后脚本(ok)&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-docker run --name mongodb -d -p 27017:27017 dhub.yunpro.cn/cloud/mongo:3.3 --auth
-sleep 1
-
-docker exec -i mongodb mongo admin &amp;lt;&amp;lt; EOF
-db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] });
-exit;
-EOF
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>#问题初衷 打算一键部署带权限验证的mongo。但是docker hub官方镜像创建mongo步骤为：
+docker run --name mongodb -d -p 27017:27017 mongo:3.3 --auth docker exec -it mongodb mongo admin db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] });  打算将其做成脚本
+#用shell实现 经过查阅，发现shell的 &amp;lt;&amp;lt;EOF 可以实现，查阅资料 http://my.oschina.net/u/1032146/blog/146941
+应该可以实现,于是写了脚本
+#!/bin/bash mongo admin &amp;lt;&amp;lt; EOF db.createUser({ user: &#39;root&#39;, pwd: &#39;root&#39;, roles: [ { role: &amp;quot;root&amp;quot;, db: &amp;quot;admin&amp;quot; } ] }); exit; EOF  在mongo 启动的容器内执行脚本，成功！
+#直接写脚本启动容器(error) !/bin/bash docker run --name mongodb -d -p 27017:27017 dhub.</description>
     </item>
     
   </channel>

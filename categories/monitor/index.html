@@ -13,7 +13,7 @@
 <html>
     <head>
         
-            <title>Python Posts - QWDing blog</title>
+            <title>Monitor Posts - QWDing blog</title>
         
 
         <meta charset="utf-8" />
@@ -30,17 +30,17 @@
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python"/>
+<meta name="twitter:title" content="Monitor"/>
 <meta name="twitter:description" content="懒癌晚期"/>
 
-        <meta property="og:title" content="Python" />
+        <meta property="og:title" content="Monitor" />
 <meta property="og:description" content="懒癌晚期" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://qwding.github.io/categories/python/" />
+<meta property="og:url" content="http://qwding.github.io/categories/monitor/" />
 
 
 
-<meta property="og:updated_time" content="2018-03-01T10:28:28&#43;08:00"/>
+<meta property="og:updated_time" content="2018-12-19T10:28:28&#43;08:00"/>
 
 
 
@@ -52,7 +52,7 @@
 
 
         
-<meta itemprop="name" content="Python">
+<meta itemprop="name" content="Monitor">
 <meta itemprop="description" content="懒癌晚期">
 
 
@@ -263,17 +263,17 @@
 
     
     <div id="main">
-        <h1>Python</h1>
+        <h1>Monitor</h1>
         
         
             <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="http://qwding.github.io/post/vim_python_ycm/">解决python 的ycm跳转不好使</a></h2>
+            <h2><a href="http://qwding.github.io/post/monitor/">从了解监控看待提问</a></h2>
         
         
-            <p>resolve python ycm not work</p>
+            <p>monitor</p>
         
     </div>
     <div class="meta">
@@ -282,11 +282,11 @@
         
 
         <time class="published"
-            datetime='2018-03-01'>
-            March 1, 2018</time>
+            datetime='2018-12-19'>
+            December 19, 2018</time>
         <span class="author">qwding</span>
         
-            <p>3 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -294,14 +294,15 @@
 
     
 
-    <p>年前折腾很久，终于把golang vim折腾好了，结果发现python ycm不好使了，很头痛
-今天解决了，记录下过程
- 查阅日志，进入到vim进行跳转操作，输入命令YcmDebugInfo，打印出来信息，及日志存储位置 查阅日志，发现报了Max retries exceeded with url: /ready ,并且发现1的日志的server端口和这个访问的端口不同 查阅issue，发现有人在linux下编译是不支持anaconda版本python的，是不是我mac 的 python版本选择有问题？ 再次查阅日志，发现server和vim用的不是一个python版本，于是在vimrc里同时配置了  let g:ycm_python_binary_path = &lsquo;/usr/local/bin/python2.7&rsquo; let g:ycm_server_python_interpreter = &lsquo;/usr/local/bin/python2.7&rsquo;  编译后发现好使了，很开心，但是出现另一个问题，系统经常报python崩溃了&hellip; 我也快崩溃了 改用python3编译，虽然编译时候还是报了一个require 3.3我用的是3.6，但是编译完后发现好使了，也没有报python崩溃  贴下现在配置
-if &amp;compatible set nocompatible &quot;去掉有关vi一致性模式，避免以前版本的bug和局限 end set rtp+=~/.vim/bundle/Vundle.vim call vundle#rc() Bundle &lsquo;VundleVim/Vundle.vim&rsquo; Bundle &lsquo;Valloric/YouCompleteMe&rsquo; Bundle &lsquo;dyng/ctrlsf.vim&rsquo;   Bundle &lsquo;kien/ctrlp.vim&rsquo; Bundle &lsquo;scrooloose/nerdtree&rsquo; Bundle &lsquo;scrooloose/syntastic&rsquo; Bundle &lsquo;altercation/vim-colors-solarized&rsquo; Bundle &lsquo;majutsushi/Tagbar&rsquo; Bundle &lsquo;vim-airline/vim-airline&rsquo; Bundle &lsquo;vim-airline/vim-airline-themes&rsquo; &quot; 括号成对跳转 % 跳转 Bundle &lsquo;tmhedberg/matchit&rsquo; &quot; 多光标操作 Bundle &lsquo;terryma/vim-multiple-cursors&rsquo; &quot; , = 对齐 Bundle &lsquo;godlygeek/tabular&rsquo; &quot; 自动补全括号 Bundle &lsquo;jiangmiao/auto-pairs&rsquo; &quot; 多层括号变色 Bundle &lsquo;luochen1990/rainbow&rsquo; &quot; 保存vim编辑信息，比如最后的位置 Bundle &lsquo;vim-scripts/restore_view.</p>
+    <p>事件 之前看一篇监控文章，但是内容很少，了解不多，今天来个人介绍，却不知道如何提问到好问题
+看某大牛提问，正向学习下
+提问  日志及metric如何收集， tcp还是udp传输，深入下协议传输问题 存储形式 (很老的技术，分trunk再分block) 索引 涉及到取时候的索引加在的内存分配, 带search功能的都需要考虑这点 怎么聚合 (小时聚合，取数据在内存将小时聚合)  类似看书 其实看书也是一样，带着核心问题看书才能看进去
+重点 其实具体技术问题没有深入探讨，但是看到些核心问题点，以后思考类似问题时候有个方向。
+索引可能是之前没有考虑到过的点，值得思考</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="http://qwding.github.io/post/vim_python_ycm/" class="button big">Continue Reading</a></li>
+            <li><a href="http://qwding.github.io/post/monitor/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -321,7 +322,7 @@ if &amp;compatible set nocompatible &quot;去掉有关vi一致性模式，避免
                     
 
                     
-                        Categories
+                        Category
                     
                 
             </li>
@@ -330,9 +331,7 @@ if &amp;compatible set nocompatible &quot;去掉有关vi一致性模式，避免
 
     
     
-        <li><a href='http://qwding.github.io/categoriesvim'>vim</a></li>
-    
-        <li><a href='http://qwding.github.io/categoriespython'>python</a></li>
+        <li><a href='http://qwding.github.io/categoriesmonitor'>monitor</a></li>
     
 </ul>
 
@@ -372,7 +371,7 @@ if &amp;compatible set nocompatible &quot;去掉有关vi一致性模式，避免
             
             <ul class="icons">
                 
-                    <li><a href="http://qwding.github.io/categories/python/index.xml" type="application/rss+xml"
+                    <li><a href="http://qwding.github.io/categories/monitor/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -868,7 +867,7 @@ if &amp;compatible set nocompatible &quot;去掉有关vi一致性模式，避免
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="http://qwding.github.io/categories/python/index.xml" type="application/rss+xml"
+                    <li><a href="http://qwding.github.io/categories/monitor/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
